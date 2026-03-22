@@ -5,32 +5,32 @@ import { ItemSortColumn, SortDirection } from './types.ts';
 const AutoTransmissionSchema = z.enum(['automatic', 'manual']);
 
 export const AutoItemParamsSchema = z.strictObject({
-  brand: z.string().nonempty(),
-  model: z.string().nonempty(),
-  yearOfManufacture: z.number().int().positive(),
-  transmission: AutoTransmissionSchema,
-  mileage: z.number().positive(),
-  enginePower: z.number().int().positive(),
+  brand: z.string().nullable().optional(),
+  model: z.string().nullable().optional(),
+  yearOfManufacture: z.number().int().positive().nullable().optional(),
+  transmission: AutoTransmissionSchema.nullable().optional(),
+  mileage: z.number().positive().nullable().optional(),
+  enginePower: z.number().int().positive().nullable().optional(),
 });
 
 const RealEstateTypeSchema = z.enum(['flat', 'house', 'room']);
 
 export const RealEstateItemParamsSchema = z.strictObject({
-  type: RealEstateTypeSchema,
-  address: z.string().nonempty(),
-  area: z.number().positive(),
-  floor: z.number().int().positive(),
+  type: RealEstateTypeSchema.nullable().optional(),
+  address: z.string().nullable().optional(),
+  area: z.number().positive().nullable().optional(),
+  floor: z.number().int().positive().nullable().optional(),
 });
 
 const ElectronicsTypeSchema = z.enum(['phone', 'laptop', 'misc']);
 const ElectronicsConditionSchema = z.enum(['new', 'used']);
 
 export const ElectronicsEstateItemParamsSchema = z.strictObject({
-  type: ElectronicsTypeSchema,
-  brand: z.string().nonempty(),
-  model: z.string().nonempty(),
-  condition: ElectronicsConditionSchema,
-  color: z.string().nonempty(),
+  type: ElectronicsTypeSchema.nullable().optional(),
+  brand: z.string().nullable().optional(),
+  model: z.string().nullable().optional(),
+  condition: ElectronicsConditionSchema.nullable().optional(),
+  color: z.string().nullable().optional(),
 });
 
 const CategorySchema = z.enum(Object.values(ITEM_CATEGORIES));
@@ -67,7 +67,7 @@ export const ItemsGetInQuerySchema = z.object({
 export const ItemUpdateInSchema = z
   .object({
     category: CategorySchema,
-    title: z.string(),
+    title: z.string().min(0),
     description: z.string().optional(),
     price: z.number().min(0),
   })

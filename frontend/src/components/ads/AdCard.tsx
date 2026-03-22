@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
-import { CATEGORY_LABELS, ItemWithRevision } from '@/types';
+import { CATEGORY_LABELS, ListItem } from '@/types';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 interface AdCardProps {
-  item: ItemWithRevision;
+  item: ListItem;
 }
 
 export function AdCard({ item }: AdCardProps) {

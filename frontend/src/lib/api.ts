@@ -3,6 +3,7 @@ import type {
   ItemsQueryParams,
   ItemsGetResponse,
   ItemGetResponse,
+  ItemWithRevision,
 } from '@/types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
@@ -41,7 +42,8 @@ export async function getItems(params: ItemsQueryParams): Promise<ItemsGetRespon
 
 // Get single item by ID
 export async function getItem(id: number): Promise<ItemGetResponse> {
-  return fetchApi<ItemGetResponse>(`/items/${id}`);
+  const data = await fetchApi<ItemWithRevision>(`/items/${id}`);
+  return { item: data };
 }
 
 // Update item - returns { success: true } on success

@@ -1,8 +1,8 @@
-import { ItemWithRevision } from '@/types';
+import { ListItem } from '@/types';
 import { AdCard } from './AdCard';
 
 interface AdsGridProps {
-  items: ItemWithRevision[];
+  items: ListItem[];
 }
 
 export function AdsGrid({ items }: AdsGridProps) {

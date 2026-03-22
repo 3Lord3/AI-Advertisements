@@ -45,9 +45,18 @@ export type ItemWithRevision = Item & {
   needsRevision: boolean;
 };
 
+// List item (from /items endpoint) - includes id for navigation
+export type ListItem = {
+  id: number;
+  category: ItemCategory;
+  title: string;
+  price: number | null;
+  needsRevision: boolean;
+};
+
 // API response types
 export interface ItemsGetResponse {
-  items: ItemWithRevision[];
+  items: ListItem[];
   total: number;
 }
 
@@ -141,8 +150,16 @@ export const ELECTRONICS_PARAMS_FIELDS = [
   { key: 'color', label: 'Цвет', type: 'text' },
 ] as const;
 
+// Params field type
+export type ParamsField = {
+  key: string;
+  label: string;
+  type: 'text' | 'number' | 'select';
+  options?: readonly { value: string; label: string }[];
+};
+
 // Get params fields by category
-export function getParamsFields(category: ItemCategory) {
+export function getParamsFields(category: ItemCategory): readonly ParamsField[] {
   switch (category) {
     case 'auto':
       return AUTO_PARAMS_FIELDS;
@@ -153,6 +170,19 @@ export function getParamsFields(category: ItemCategory) {
     default:
       return [];
   }
+}
+
+// Get label for a select value
+export function getSelectLabel(
+  category: ItemCategory,
+  fieldKey: string,
+  value: string
+): string {
+  const fields = getParamsFields(category);
+  const field = fields.find(f => f.key === fieldKey);
+  if (!field || field.type !== 'select' || !field.options) return value;
+  const option = field.options.find(o => o.value === value);
+  return option?.label || value;
 }
 
 // Check if item needs revision
