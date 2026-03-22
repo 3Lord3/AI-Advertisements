@@ -1,5 +1,17 @@
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { AdsListPage } from './pages/AdsListPage'
+import { AdDetailPage } from './pages/AdDetailPage'
+import { AdEditPage } from './pages/AdEditPage'
+
 function App() {
-  return null;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/ads" replace />} />
+      <Route path="/ads" element={<AdsListPage />} />
+      // <Route path="/ads/:id" element={<AdDetailPage />} />
+      // <Route path="/ads/:id/edit" element={<AdEditPage />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App
