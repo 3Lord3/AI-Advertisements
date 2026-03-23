@@ -7,6 +7,7 @@ import type {
 } from '@/types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+const OLLAMA_URL = import.meta.env.VITE_OLLAMA_URL || 'http://localhost:11434';
 
 // Helper function for fetch calls
 async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> {
@@ -73,7 +74,7 @@ export async function generateDescription(
 4. Объём: 2-4 предложения
 5. Профессиональный, но дружелюбный тон`;
 
-  const response = await fetch('http://localhost:11434/api/generate', {
+  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -103,7 +104,7 @@ export async function getMarketPrice(
 
 Ответь ТОЛЬКО числом в рублях (без пробелов, например: 150000).`;
 
-  const response = await fetch('http://localhost:11434/api/generate', {
+  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
