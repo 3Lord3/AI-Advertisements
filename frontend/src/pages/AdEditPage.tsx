@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Save, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,7 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { MainInfoForm } from '@/components/ads/MainInfoForm';
 import { ParamsForm } from '@/components/ads/ParamsForm';
 import { useAdForm } from '@/hooks/useAdForm';
+import { ItemCategory } from '@/types';
 
 export function AdEditPage() {
   const navigate = useNavigate();
@@ -20,21 +21,42 @@ export function AdEditPage() {
     itemId, 
     updateMutation, 
     handleSubmit, 
-    handleCategoryChange, 
+    handleCategoryChange,
     handleParamChange 
   } = useAdForm();
 
+  // Create a unified onChange handler that handles all fields
+  const handleMainInfoChange = (field: string, value: string | number | ItemCategory) => {
+    if (field === 'category' && typeof value === 'string') {
+      handleCategoryChange(value as ItemCategory);
+    } else {
+      setFormData(prev => ({ ...prev, [field]: value }));
+    }
+  };
+
+  // Track if form has been modified from initial state
+  const hasUnsavedChanges = useMemo(() => {
+    if (!item) return false;
+    // Compare current form data with original item data
+    return formData.title !== item.title ||
+           formData.description !== (item.description || '')||
+           formData.price !== item.price ||
+           formData.category !== item.category ||
+           JSON.stringify(formData.params) !== JSON.stringify(item.params);
+  }, [formData, item]);
+
   // Warn about unsaved changes before leaving
   useEffect(() => {
+    if (!hasUnsavedChanges) return;
+    
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (formData.title || formData.description || formData.price > 0) {
-        e.preventDefault();
-        e.returnValue = '';
-      }
+      e.preventDefault();
+      e.returnValue = '';
     };
+    
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [formData]);
+  }, [hasUnsavedChanges]);
 
   const handleBack = () => navigate(`/ads/${itemId}`);
   const handleCancel = () => navigate(`/ads/${itemId}`);
@@ -58,10 +80,7 @@ export function AdEditPage() {
                 title={formData.title}
                 price={formData.price}
                 description={formData.description}
-                onCategoryChange={handleCategoryChange}
-                onTitleChange={(title) => setFormData({ ...formData, title })}
-                onPriceChange={(price) => setFormData({ ...formData, price })}
-                onDescriptionChange={(description) => setFormData({ ...formData, description })}
+                onChange={handleMainInfoChange}
               />
             </CardContent>
           </Card>

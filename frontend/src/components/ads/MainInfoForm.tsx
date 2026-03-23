@@ -4,15 +4,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CATEGORY_LABELS, CATEGORY_OPTIONS, ItemCategory } from '@/types';
 
-interface MainInfoFormProps {
+export interface MainInfoFormProps {
   category: ItemCategory;
   title: string;
   price: number;
   description: string;
-  onCategoryChange: (category: ItemCategory) => void;
-  onTitleChange: (title: string) => void;
-  onPriceChange: (price: number) => void;
-  onDescriptionChange: (description: string) => void;
+  onChange: (field: string, value: string | number | ItemCategory) => void;
 }
 
 export function MainInfoForm({
@@ -20,10 +17,7 @@ export function MainInfoForm({
   title,
   price,
   description,
-  onCategoryChange,
-  onTitleChange,
-  onPriceChange,
-  onDescriptionChange,
+  onChange,
 }: MainInfoFormProps) {
   return (
     <>
@@ -33,7 +27,7 @@ export function MainInfoForm({
         </Label>
         <Select
           value={category}
-          onValueChange={(value) => onCategoryChange(value as ItemCategory)}
+          onValueChange={(value) => onChange('category', value as ItemCategory)}
         >
           <SelectTrigger>
             <SelectValue placeholder="Выберите категорию">
@@ -57,7 +51,7 @@ export function MainInfoForm({
         <Input
           id="title"
           value={title}
-          onChange={(e) => onTitleChange(e.target.value)}
+          onChange={(e) => onChange('title', e.target.value)}
           placeholder="Название объявления"
           required
         />
@@ -71,7 +65,7 @@ export function MainInfoForm({
           id="price"
           type="number"
           value={price}
-          onChange={(e) => onPriceChange(Number(e.target.value))}
+          onChange={(e) => onChange('price', Number(e.target.value))}
           placeholder="0"
           required
           min={1}
@@ -88,7 +82,7 @@ export function MainInfoForm({
         <Textarea
           id="description"
           value={description}
-          onChange={(e) => onDescriptionChange(e.target.value)}
+          onChange={(e) => onChange('description', e.target.value)}
           placeholder="Опишите ваш товар..."
           className="min-h-[120px]"
         />

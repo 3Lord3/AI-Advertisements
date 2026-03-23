@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/set-state-in-effect */
+import { useState, useEffect, useRef } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getItem, updateItem } from '@/lib/api';
 import { useAdsStore } from '@/lib/store';
-import { ItemCategory, AutoItemParams, RealEstateItemParams, ElectronicsItemParams } from '@/types';
+import { useDebounce } from './useDebounce';
+import { ItemCategory, AutoItemParams, RealEstateItemParams, ElectronicsItemParams, Item } from '@/types';
 
 interface FormData {
   category: ItemCategory;
@@ -12,6 +14,14 @@ interface FormData {
   description: string;
   params: Record<string, string | number>;
 }
+
+const initialFormData: FormData = {
+  category: 'electronics',
+  title: '',
+  price: 0,
+  description: '',
+  params: {},
+};
 
 interface UseAdFormReturn {
   formData: FormData;
@@ -23,7 +33,7 @@ interface UseAdFormReturn {
     isPending: boolean;
     isError: boolean;
   };
-  handleSubmit: (e: React.FormEvent) => void;
+  handleSubmit: React.FormEventHandler<HTMLFormElement>;
   handleCategoryChange: (category: ItemCategory) => void;
   handleParamChange: (key: string, value: string | number) => void;
 }
@@ -35,25 +45,20 @@ export function useAdForm(): UseAdFormReturn {
   const itemId = Number(id);
   const { saveDraft, clearDraft } = useAdsStore();
 
-  const [formData, setFormData] = useState<FormData>({
-    category: 'electronics',
-    title: '',
-    price: 0,
-    description: '',
-    params: {},
-  });
-  const [isInitialized, setIsInitialized] = useState(false);
-
   const { data, isLoading, error } = useQuery({
     queryKey: ['item', itemId],
     queryFn: () => getItem(itemId),
     enabled: !isNaN(itemId) && itemId > 0,
   });
 
-  const item = data?.item;
+  const item = data?.item as Item | undefined;
 
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const userHasModified = useRef(false);
+
+  // Обновляем форму когда загружается item, только если пользователь не изменял её
   useEffect(() => {
-    if (!isInitialized && item) {
+    if (item && !userHasModified.current) {
       setFormData({
         category: item.category,
         title: item.title,
@@ -61,23 +66,24 @@ export function useAdForm(): UseAdFormReturn {
         description: item.description || '',
         params: item.params as Record<string, string | number>,
       });
-      setIsInitialized(true);
     }
-  }, [item, isInitialized]);
+  }, [item]);
+
+  const isInitialized = !!item;
+
+  // Debounced save to store
+  const debouncedFormData = useDebounce(formData, 500);
 
   useEffect(() => {
-    if (!isInitialized || !itemId || !formData.title) return;
-    const timer = setTimeout(() => {
-      saveDraft(itemId, {
-        category: formData.category,
-        title: formData.title,
-        price: formData.price,
-        description: formData.description,
-        params: formData.params as AutoItemParams | RealEstateItemParams | ElectronicsItemParams,
-      });
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [formData, itemId, saveDraft, clearDraft, isInitialized]);
+    if (!isInitialized || !itemId || !debouncedFormData.title) return;
+    saveDraft(itemId, {
+      category: debouncedFormData.category,
+      title: debouncedFormData.title,
+      price: debouncedFormData.price,
+      description: debouncedFormData.description,
+      params: debouncedFormData.params as AutoItemParams | RealEstateItemParams | ElectronicsItemParams,
+    });
+  }, [debouncedFormData, itemId, saveDraft, clearDraft, isInitialized]);
 
   const updateMutation = useMutation({
     mutationFn: () => updateItem(itemId, {
@@ -95,22 +101,29 @@ export function useAdForm(): UseAdFormReturn {
     },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
     updateMutation.mutate();
   };
 
   const handleCategoryChange = (category: ItemCategory) => {
+    userHasModified.current = true;
     setFormData({ ...formData, category, params: {} });
   };
 
   const handleParamChange = (key: string, value: string | number) => {
+    userHasModified.current = true;
     setFormData({ ...formData, params: { ...formData.params, [key]: value } });
   };
 
+  // Функция для прямого изменения данных пользователем
+  const handleDirectChange = (value: FormData | ((prev: FormData) => FormData)) => {
+    userHasModified.current = true;
+    setFormData(value);
+  };
   return {
     formData,
-    setFormData,
+    setFormData: handleDirectChange,
     isLoading,
     error: !!error,
     itemId,
