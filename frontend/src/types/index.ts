@@ -102,12 +102,10 @@ export const CATEGORY_LABELS: Record<ItemCategory, string> = {
   electronics: 'Электроника',
 };
 
-// Category options for select
-export const CATEGORY_OPTIONS = [
-  { value: 'auto', label: 'Автомобили' },
-  { value: 'real_estate', label: 'Недвижимость' },
-  { value: 'electronics', label: 'Электроника' },
-];
+// Category options for select - derived from CATEGORY_LABELS
+export const CATEGORY_OPTIONS = (Object.keys(CATEGORY_LABELS) as ItemCategory[]).map(
+  (key) => ({ value: key, label: CATEGORY_LABELS[key] })
+);
 
 // Auto params fields
 export const AUTO_PARAMS_FIELDS = [
@@ -206,6 +204,22 @@ export function checkNeedsRevision(item: Item): boolean {
   return hasEmptyParams;
 }
 
+// Fallback labels for additional fields not in paramsFields
+const FALLBACK_LABELS: Record<string, string> = {
+  type: 'Тип',
+  brand: 'Марка',
+  model: 'Модель',
+  yearOfManufacture: 'Год выпуска',
+  transmission: 'Коробка передач',
+  mileage: 'Пробег',
+  enginePower: 'Мощность двигателя',
+  address: 'Адрес',
+  area: 'Площадь',
+  floor: 'Этаж',
+  condition: 'Состояние',
+  color: 'Цвет',
+};
+
 // Get missing fields for revision
 export function getMissingFields(item: Item): string[] {
   const missing: string[] = [];
@@ -214,16 +228,35 @@ export function getMissingFields(item: Item): string[] {
     missing.push('Описание');
   }
 
+  // Get params fields for the category to get proper labels
+  const paramsFields = getParamsFields(item.category);
+  const fieldLabels = new Map<string, string>(
+    paramsFields.map((f: ParamsField) => [f.key, f.label] as [string, string])
+  );
+
   const params = item.params;
   const paramKeys = Object.keys(params);
   
-  if (paramKeys.length === 0) {
+  // Check if all params are empty
+  const hasEmptyParams = paramKeys.some(key => {
+    const value = params[key as keyof typeof params];
+    return value === undefined || value === '' || value === null;
+  });
+  
+  const hasAnyParams = paramKeys.length > 0 && paramKeys.some(key => {
+    const value = params[key as keyof typeof params];
+    return value !== undefined && value !== '' && value !== null;
+  });
+  
+  if (!hasAnyParams) {
     missing.push('Характеристики');
-  } else {
+  } else if (hasEmptyParams) {
     paramKeys.forEach(key => {
       const value = params[key as keyof typeof params];
       if (value === undefined || value === '' || value === null) {
-        missing.push(key);
+        // Use label from paramsFields, fallback to FALLBACK_LABELS, then to key
+        const label = fieldLabels.get(key) || FALLBACK_LABELS[key] || key;
+        missing.push(label);
       }
     });
   }
