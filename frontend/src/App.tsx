@@ -1,17 +1,51 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { AdsListPage } from './pages/AdsListPage'
-import { AdDetailPage } from './pages/AdDetailPage'
-import { AdEditPage } from './pages/AdEditPage'
+import { Suspense, lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
+import { LoadingSpinner } from './components/ui/LoadingSpinner';
+
+// Lazy load pages for better performance
+const AdsListPage = lazy(() => import('./pages/AdsListPage').then(m => ({ default: m.AdsListPage })));
+const AdDetailPage = lazy(() => import('./pages/AdDetailPage').then(m => ({ default: m.AdDetailPage })));
+const AdEditPage = lazy(() => import('./pages/AdEditPage').then(m => ({ default: m.AdEditPage })));
+
+function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
+  return (
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="text-center space-y-4">
+        <h2 className="text-2xl font-bold text-destructive">Что-то пошло не так</h2>
+        <p className="text-muted-foreground">{(error as Error).message}</p>
+        <button
+          onClick={resetErrorBoundary}
+          className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
+        >
+          Попробовать снова
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <LoadingSpinner />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/ads" replace />} />
-      <Route path="/ads" element={<AdsListPage />} />
-      // <Route path="/ads/:id" element={<AdDetailPage />} />
-      // <Route path="/ads/:id/edit" element={<AdEditPage />} />
-    </Routes>
-  )
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/ads" replace />} />
+          <Route path="/ads" element={<AdsListPage />} />
+          <Route path="/ads/:id" element={<AdDetailPage />} />
+          <Route path="/ads/:id/edit" element={<AdEditPage />} />
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
