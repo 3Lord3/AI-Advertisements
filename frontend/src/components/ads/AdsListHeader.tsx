@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Search, ArrowUpDown, LayoutGrid, List } from 'lucide-react';
 import { useAdsStore } from '@/lib/store';
+import { useDebounce } from '@/hooks/useDebounce';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -22,14 +23,11 @@ interface AdsListHeaderProps {
 export function AdsListHeader({ total, viewMode, onViewModeChange }: AdsListHeaderProps) {
   const { filters, setFilters, sortColumn, sortDirection, setSort } = useAdsStore();
   const [localSearch, setLocalSearch] = useState(filters.search);
-  const [debouncedSearch, setDebouncedSearch] = useState(filters.search);
+  const debouncedSearch = useDebounce(localSearch, 500);
 
-  // Debounced search
+  // Update filters when debounced search changes
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setFilters({ search: debouncedSearch });
-    }, 500);
-    return () => clearTimeout(timer);
+    setFilters({ search: debouncedSearch });
   }, [debouncedSearch, setFilters]);
 
   const handleSortChange = (value: string | null) => {
@@ -57,10 +55,7 @@ export function AdsListHeader({ total, viewMode, onViewModeChange }: AdsListHead
               type="search"
               placeholder="Поиск по названию..."
               value={localSearch}
-              onChange={(e) => {
-                setLocalSearch(e.target.value);
-                setDebouncedSearch(e.target.value);
-              }}
+              onChange={(e) => setLocalSearch(e.target.value)}
               className="pl-9"
             />
           </div>

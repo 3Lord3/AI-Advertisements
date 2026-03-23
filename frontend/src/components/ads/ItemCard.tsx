@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { CATEGORY_LABELS, ItemWithRevision } from '@/types';
+import { formatDate } from '@/lib/dateUtils';
 import { ItemParams } from './ItemParams';
 import { RevisionWarning } from './RevisionWarning';
 
@@ -10,14 +11,6 @@ interface ItemCardProps {
 }
 
 export function ItemCard({ item }: ItemCardProps) {
-  const formatDate = (date: string) => {
-    return new Date(date).toLocaleDateString('ru-RU', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    });
-  };
-
   return (
     <Card>
       <CardHeader>
