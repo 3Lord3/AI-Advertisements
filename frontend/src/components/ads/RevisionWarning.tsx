@@ -1,6 +1,6 @@
 import { AlertCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { ItemWithRevision, getParamsFields, ParamsField } from '@/types';
+import { ItemWithRevision, getMissingFields } from '@/types';
 
 interface RevisionWarningProps {
   item: ItemWithRevision;
@@ -9,45 +9,8 @@ interface RevisionWarningProps {
 export function RevisionWarning({ item }: RevisionWarningProps) {
   if (!item.needsRevision) return null;
 
-  const missing: string[] = [];
-
-  // Check description
-  if (!item.description || item.description.trim() === '') {
-    missing.push('Описание');
-  }
-
-  // Get params fields for the category to check ALL expected fields
-  const paramsFields = getParamsFields(item.category);
-  const fieldLabels = new Map<string, string>(paramsFields.map((f: ParamsField) => [f.key, f.label] as [string, string]));
-
-  // Fallback labels for additional fields
-  const fallbackLabels: Record<string, string> = {
-    type: 'Тип',
-    brand: 'Марка',
-    model: 'Модель',
-    yearOfManufacture: 'Год выпуска',
-    transmission: 'Коробка передач',
-    mileage: 'Пробег',
-    enginePower: 'Мощность двигателя',
-    address: 'Адрес',
-    area: 'Площадь',
-    floor: 'Этаж',
-    condition: 'Состояние',
-    color: 'Цвет',
-  };
-
-  const params = item.params;
-
-  // Check ALL expected fields for the category
-  paramsFields.forEach((field: ParamsField) => {
-    const key = field.key;
-    const value = params[key as keyof typeof params];
-    
-    if (value === undefined || value === '' || value === null) {
-      const label = fieldLabels.get(key) || fallbackLabels[key] || key;
-      missing.push(label);
-    }
-  });
+  // Use getMissingFields from types
+  const missing = getMissingFields(item);
 
   if (missing.length === 0) return null;
 
