@@ -52,6 +52,8 @@ export type ListItem = {
   title: string;
   price: number | null;
   needsRevision: boolean;
+  description?: string;
+  params?: Record<string, unknown>;
 };
 
 // API response types
