@@ -29,6 +29,7 @@ interface UseAdFormReturn {
   isLoading: boolean;
   error: boolean;
   itemId: number;
+  item?: Item;
   updateMutation: {
     isPending: boolean;
     isError: boolean;
@@ -116,17 +117,13 @@ export function useAdForm(): UseAdFormReturn {
     setFormData({ ...formData, params: { ...formData.params, [key]: value } });
   };
 
-  // Функция для прямого изменения данных пользователем
-  const handleDirectChange = (value: FormData | ((prev: FormData) => FormData)) => {
-    userHasModified.current = true;
-    setFormData(value);
-  };
   return {
     formData,
-    setFormData: handleDirectChange,
+    setFormData,
     isLoading,
     error: !!error,
     itemId,
+    item,
     updateMutation: { isPending: updateMutation.isPending, isError: updateMutation.isError },
     handleSubmit,
     handleCategoryChange,
