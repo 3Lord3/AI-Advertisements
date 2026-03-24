@@ -110,6 +110,8 @@ fastify.get<ItemsGetRequest>('/items', request => {
         title: item.title,
         price: item.price,
         needsRevision: doesItemNeedRevision(item),
+        description: item.description,
+        params: item.params,
       })),
     total: filteredItems.length,
   };
