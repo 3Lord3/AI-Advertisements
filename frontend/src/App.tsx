@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
 import { LoadingSpinner } from './components/ui/LoadingSpinner';
+import { ThemeToggle } from './components/ui/ThemeToggle';
 
 // Lazy load pages for better performance
 const AdsListPage = lazy(() => import('./pages/AdsListPage').then(m => ({ default: m.AdsListPage })));
@@ -36,14 +37,19 @@ function PageLoader() {
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Navigate to="/ads" replace />} />
-          <Route path="/ads" element={<AdsListPage />} />
-          <Route path="/ads/:id" element={<AdDetailPage />} />
-          <Route path="/ads/:id/edit" element={<AdEditPage />} />
-        </Routes>
-      </Suspense>
+      <div className="relative min-h-screen">
+        <div className="absolute top-4 right-4 z-50">
+          <ThemeToggle />
+        </div>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Navigate to="/ads" replace />} />
+            <Route path="/ads" element={<AdsListPage />} />
+            <Route path="/ads/:id" element={<AdDetailPage />} />
+            <Route path="/ads/:id/edit" element={<AdEditPage />} />
+          </Routes>
+        </Suspense>
+      </div>
     </ErrorBoundary>
   );
 }

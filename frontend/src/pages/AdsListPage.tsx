@@ -35,7 +35,7 @@ export function AdsListPage() {
   const totalPages = data ? Math.ceil(data.total / limit) : 0;
 
   return (
-    <div className="min-h-screen bg-[#F7F5F8]">
+    <div className="min-h-screen bg-background">
       <header className="bg-card">
         <div className="container mx-auto px-4 py-4">
           <AdsListHeader 
