@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Save, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,6 +9,7 @@ import { PageHeader } from '@/components/ui/PageHeader';
 import { MainInfoForm } from '@/components/ads/MainInfoForm';
 import { ParamsForm } from '@/components/ads/ParamsForm';
 import { useAdForm } from '@/hooks/useAdForm';
+import { generateDescription, getMarketPrice, checkOllamaAvailability, OllamaError, PriceAnalysis } from '@/lib/api';
 import { ItemCategory } from '@/types';
 
 export function AdEditPage() {
@@ -18,12 +19,19 @@ export function AdEditPage() {
     setFormData, 
     isLoading, 
     error, 
-    itemId, 
+    itemId,
+    item,
     updateMutation, 
     handleSubmit, 
     handleCategoryChange,
     handleParamChange 
   } = useAdForm();
+
+  // AI state
+  const [isGeneratingDescription, setIsGeneratingDescription] = useState(false);
+  const [isGettingPrice, setIsGettingPrice] = useState(false);
+  const [ollamaAvailable, setOllamaAvailable] = useState<boolean | null>(null);
+  const [priceAnalysis, setPriceAnalysis] = useState<PriceAnalysis | null>(null);
 
   // Create a unified onChange handler that handles all fields
   const handleMainInfoChange = (field: string, value: string | number | ItemCategory) => {
@@ -37,12 +45,14 @@ export function AdEditPage() {
   // Track if form has been modified from initial state
   const hasUnsavedChanges = useMemo(() => {
     if (!item) return false;
-    // Compare current form data with original item data
+    // Normalize params for comparison (convert all values to strings)
+    const normalizeParams = (params: Record<string, unknown>) => 
+      JSON.stringify(Object.entries(params || {}).sort(([a], [b]) => a.localeCompare(b)));
     return formData.title !== item.title ||
            formData.description !== (item.description || '')||
            formData.price !== item.price ||
            formData.category !== item.category ||
-           JSON.stringify(formData.params) !== JSON.stringify(item.params);
+           normalizeParams(formData.params) !== normalizeParams(item.params);
   }, [formData, item]);
 
   // Warn about unsaved changes before leaving
@@ -57,6 +67,80 @@ export function AdEditPage() {
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [hasUnsavedChanges]);
+
+  // Check Ollama availability on mount
+  useEffect(() => {
+    const checkOllama = async () => {
+      const available = await checkOllamaAvailability();
+      setOllamaAvailable(available);
+    };
+    checkOllama();
+  }, []);
+
+  // AI handlers
+  const handleGenerateDescription = async () => {
+    if (!formData.title || !formData.category) {
+      alert('Пожалуйста, заполните название и категорию');
+      return;
+    }
+
+    setIsGeneratingDescription(true);
+    try {
+      const description = await generateDescription(
+        formData.title,
+        formData.category,
+        formData.params
+      );
+      setFormData(prev => ({ ...prev, description }));
+    } catch (error) {
+      if (error instanceof OllamaError) {
+        alert(error.message);
+      } else {
+        alert('Не удалось сгенерировать описание. Попробуйте позже.');
+      }
+    } finally {
+      setIsGeneratingDescription(false);
+    }
+  };
+
+  const handleGetPrice = async () => {
+    if (!formData.title || !formData.category) {
+      alert('Пожалуйста, заполните название и категорию');
+      return;
+    }
+
+    setIsGettingPrice(true);
+    setPriceAnalysis(null);
+    try {
+      const result = await getMarketPrice(
+        formData.title,
+        formData.category,
+        formData.params
+      );
+      if (result.suggestedPrice > 0) {
+        setPriceAnalysis(result);
+      } else {
+        alert('Не удалось определить рыночную цену. Попробуйте изменить описание товара.');
+      }
+    } catch (error) {
+      if (error instanceof OllamaError) {
+        alert(error.message);
+      } else {
+        alert('Не удалось определить цену. Попробуйте позже.');
+      }
+    } finally {
+      setIsGettingPrice(false);
+    }
+  };
+
+  const handleApplyPrice = (price: number) => {
+    setFormData(prev => ({ ...prev, price }));
+    setPriceAnalysis(null);
+  };
+
+  const handleClosePriceDialog = () => {
+    setPriceAnalysis(null);
+  };
 
   const handleBack = () => navigate(`/ads/${itemId}`);
   const handleCancel = () => navigate(`/ads/${itemId}`);
@@ -81,6 +165,13 @@ export function AdEditPage() {
                 price={formData.price}
                 description={formData.description}
                 onChange={handleMainInfoChange}
+                isGeneratingDescription={isGeneratingDescription}
+                isGettingPrice={isGettingPrice}
+                onGenerateDescription={ollamaAvailable ? handleGenerateDescription : undefined}
+                onGetPrice={ollamaAvailable ? handleGetPrice : undefined}
+                priceAnalysis={priceAnalysis}
+                onApplyPrice={handleApplyPrice}
+                onClosePriceDialog={handleClosePriceDialog}
               />
             </CardContent>
           </Card>
