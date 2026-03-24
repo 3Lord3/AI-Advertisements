@@ -1,423 +1,1582 @@
 [
   {
     "id": 1,
-    "category": "auto",
-    "title": "Почти новая Mitsubishi Lancer",
+    "category": "electronics",
+    "title": "iPhone 15 Pro Max 256GB Titanium",
     "description": "",
-    "price": 300000,
-    "createdAt": "2026-02-12T00:00:00.000Z",
-    "updatedAt": "2026-02-12T00:00:00.000Z",
-    "params": {
-      "brand": "Mitsubishi",
-      "model": "Lancer",
-      "yearOfManufacture": 2005,
-      "transmission": "automatic",
-      "mileage": 200000,
-      "enginePower": 98
-    }
+    "price": 145000,
+    "createdAt": "2026-03-01T00:00:00.000Z",
+    "updatedAt": "2026-03-01T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro Max", "condition": "new", "color": "Титановый" }
   },
   {
     "id": 2,
-    "category": "real_estate",
-    "title": "Видовая двушка",
+    "category": "electronics",
+    "title": "iPhone 15 Pro Max 256GB Titanium",
     "description": "",
-    "price": 23200000,
-    "createdAt": "2026-02-14T00:00:00.000Z",
-    "updatedAt": "2026-02-14T00:00:00.000Z",
-    "params": {
-      "type": "flat",
-      "address": "г. Москва, Кастанаевская улица, 42к1",
-      "area": 45.2,
-      "floor": 4
-    }
+    "price": 125000,
+    "createdAt": "2026-03-02T00:00:00.000Z",
+    "updatedAt": "2026-03-02T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro Max", "condition": "used", "mileage": 5000 }
   },
   {
     "id": 3,
     "category": "electronics",
-    "title": "Новенький айфон 17 Про Макс",
+    "title": "iPhone 15 Pro Max 256GB Titanium",
     "description": "",
-    "price": 200000,
-    "createdAt": "2026-03-10T00:00:00.000Z",
-    "updatedAt": "2026-03-10T00:00:00.000Z",
-    "params": {
-      "type": "phone",
-      "brand": "Apple",
-      "model": "iPhone 17 Pro Max",
-      "condition": "new",
-      "color": "Чёрный"
-    }
+    "price": 95000,
+    "createdAt": "2026-03-03T00:00:00.000Z",
+    "updatedAt": "2026-03-03T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro Max", "condition": "used", "defects": "Разбито стекло", "mileage": 25000 }
   },
   {
     "id": 4,
-    "category": "real_estate",
-    "title": "Уютная комната в общежитии",
+    "category": "electronics",
+    "title": "iPhone 14 Pro 128GB Space Black",
     "description": "",
-    "price": 15000,
-    "createdAt": "2026-03-05T00:00:00.000Z",
-    "updatedAt": "2026-03-05T00:00:00.000Z",
-    "params": {
-      "type": "room",
-      "address": "г. Санкт-Петербург, Витебский проспект, 101к2",
-      "area": 7.6,
-      "floor": 2
-    }
+    "price": 98000,
+    "createdAt": "2026-03-04T00:00:00.000Z",
+    "updatedAt": "2026-03-04T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 14 Pro", "condition": "new" }
   },
   {
     "id": 5,
     "category": "electronics",
-    "title": "Наушники JBL Tour one m2",
+    "title": "iPhone 14 Pro 128GB Space Black",
     "description": "",
-    "price": 25000,
-    "createdAt": "2026-03-02T00:00:00.000Z",
-    "updatedAt": "2026-03-02T00:00:00.000Z",
-    "params": {
-      "type": "misc",
-      "condition": "new",
-      "color": "Белый"
-    }
+    "price": 78000,
+    "createdAt": "2026-03-05T00:00:00.000Z",
+    "updatedAt": "2026-03-05T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 14 Pro", "condition": "used", "mileage": 15000 }
   },
   {
     "id": 6,
     "category": "electronics",
-    "title": "Топовый MP3-плеер",
+    "title": "iPhone 14 Pro 128GB Space Black",
     "description": "",
-    "price": 1200,
+    "price": 55000,
     "createdAt": "2026-03-06T00:00:00.000Z",
     "updatedAt": "2026-03-06T00:00:00.000Z",
-    "params": {}
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 14 Pro", "condition": "used", "defects": "Не работает Face ID", "mileage": 45000 }
   },
   {
     "id": 7,
-    "category": "auto",
-    "title": "Subaru Forester, 2010, 350 000 км",
+    "category": "electronics",
+    "title": "Samsung Galaxy S24 Ultra 512GB",
     "description": "",
-    "price": 990000,
-    "createdAt": "2026-02-18T00:00:00.000Z",
-    "updatedAt": "2026-02-18T00:00:00.000Z",
-    "params": {}
+    "price": 135000,
+    "createdAt": "2026-03-07T00:00:00.000Z",
+    "updatedAt": "2026-03-07T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Samsung", "model": "Galaxy S24 Ultra", "condition": "new" }
   },
   {
     "id": 8,
-    "category": "auto",
-    "title": "ВАЗ (LADA) Niva 1.7 MT, 2020, 102 000 км",
+    "category": "electronics",
+    "title": "Samsung Galaxy S24 Ultra 512GB",
     "description": "",
-    "price": 990000,
-    "createdAt": "2026-02-01T00:00:00.000Z",
-    "updatedAt": "2026-02-01T00:00:00.000Z",
-    "params": {
-      "brand": "Lada",
-      "model": "Niva",
-      "yearOfManufacture": "2020",
-      "transmission": "automatic"
-    }
+    "price": 115000,
+    "createdAt": "2026-03-08T00:00:00.000Z",
+    "updatedAt": "2026-03-08T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Samsung", "model": "Galaxy S24 Ultra", "condition": "used", "mileage": 8000 }
   },
   {
     "id": 9,
-    "category": "real_estate",
-    "title": "Квартира-студия, 19 м², 3/5 эт.",
+    "category": "electronics",
+    "title": "Samsung Galaxy S24 Ultra 512GB",
     "description": "",
-    "price": 13600000,
-    "createdAt": "2026-02-25T00:00:00.000Z",
-    "updatedAt": "2026-02-25T00:00:00.000Z",
-    "params": {
-      "type": "flat"
-    }
+    "price": 82000,
+    "createdAt": "2026-03-09T00:00:00.000Z",
+    "updatedAt": "2026-03-09T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Samsung", "model": "Galaxy S24 Ultra", "condition": "used", "defects": "Царапины на экране", "mileage": 30000 }
   },
   {
     "id": 10,
-    "category": "real_estate",
-    "title": "Коттедж 198,2 м² на участке 12 сот.",
+    "category": "electronics",
+    "title": "Xiaomi 14 Ultra 512GB",
     "description": "",
-    "price": 25000000,
-    "createdAt": "2026-03-09T00:00:00.000Z",
-    "updatedAt": "2026-03-09T00:00:00.000Z",
-    "params": {
-      "type": "house"
-    }
+    "price": 115000,
+    "createdAt": "2026-03-10T00:00:00.000Z",
+    "updatedAt": "2026-03-10T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Xiaomi", "model": "14 Ultra", "condition": "new" }
   },
   {
     "id": 11,
     "category": "electronics",
-    "title": "Проигрыватель винила Radiotehnika эп-101",
+    "title": "Xiaomi 14 Ultra 512GB",
     "description": "",
-    "price": 4400,
-    "createdAt": "2026-03-05T00:00:00.000Z",
-    "updatedAt": "2026-03-05T00:00:00.000Z",
-    "params": {
-      "type": "misc",
-      "condition": "used",
-      "color": "Серый"
-    }
+    "price": 92000,
+    "createdAt": "2026-03-11T00:00:00.000Z",
+    "updatedAt": "2026-03-11T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Xiaomi", "model": "14 Ultra", "condition": "used", "mileage": 12000 }
   },
   {
     "id": 12,
-    "category": "auto",
-    "title": "Smart Fortwo 1.0 AMT, 2009",
+    "category": "electronics",
+    "title": "Xiaomi 14 Ultra 512GB",
     "description": "",
-    "price": 750000,
-    "createdAt": "2026-03-03T00:00:00.000Z",
-    "updatedAt": "2026-03-03T00:00:00.000Z",
-    "params": {
-      "yearOfManufacture": "2009"
-    }
+    "price": 68000,
+    "createdAt": "2026-03-12T00:00:00.000Z",
+    "updatedAt": "2026-03-12T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Xiaomi", "model": "14 Ultra", "condition": "used", "defects": "Батарея быстро разряжается", "mileage": 40000 }
   },
   {
     "id": 13,
     "category": "electronics",
-    "title": "Телевизор lg на запчасти",
+    "title": "MacBook Pro 14 M3 16/512GB",
     "description": "",
-    "price": 1850,
-    "createdAt": "2026-02-11T00:00:00.000Z",
-    "updatedAt": "2026-02-11T00:00:00.000Z",
-    "params": {}
+    "price": 285000,
+    "createdAt": "2026-03-13T00:00:00.000Z",
+    "updatedAt": "2026-03-13T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Pro 14", "condition": "new" }
   },
   {
     "id": 14,
-    "category": "real_estate",
-    "title": "3-к. квартира, 98 м², 9/23 эт.",
+    "category": "electronics",
+    "title": "MacBook Pro 14 M3 16/512GB",
     "description": "",
-    "price": 32000000,
-    "createdAt": "2026-02-16T00:00:00.000Z",
-    "updatedAt": "2026-02-16T00:00:00.000Z",
-    "params": {
-      "type": "flat",
-      "area": 98
-    }
+    "price": 245000,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-14T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Pro 14", "condition": "used", "mileage": 3000 }
   },
   {
     "id": 15,
-    "category": "real_estate",
-    "title": "Таунхаус 331 м² на участке 2,4 сот.",
+    "category": "electronics",
+    "title": "MacBook Pro 14 M3 16/512GB",
     "description": "",
-    "price": 32000000,
-    "createdAt": "2026-01-22T00:00:00.000Z",
-    "updatedAt": "2026-01-22T00:00:00.000Z",
-    "params": {
-      "type": "house",
-      "area": 331
-    }
+    "price": 185000,
+    "createdAt": "2026-03-15T00:00:00.000Z",
+    "updatedAt": "2026-03-15T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Pro 14", "condition": "used", "defects": "Вмятина на корпусе", "mileage": 20000 }
   },
   {
     "id": 16,
     "category": "electronics",
-    "title": "Холодильник Bosch",
+    "title": "MacBook Air 15 M3 16/256GB",
     "description": "",
-    "price": 9600,
-    "createdAt": "2026-01-11T00:00:00.000Z",
-    "updatedAt": "2026-01-11T00:00:00.000Z",
-    "params": {
-      "type": "misc",
-      "brand": "Bosch",
-      "color": "Чёрный"
-    }
+    "price": 175000,
+    "createdAt": "2026-03-16T00:00:00.000Z",
+    "updatedAt": "2026-03-16T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Air 15", "condition": "new" }
   },
   {
     "id": 17,
-    "category": "auto",
-    "title": "BMW X1",
+    "category": "electronics",
+    "title": "MacBook Air 15 M3 16/256GB",
     "description": "",
-    "price": 300000,
-    "createdAt": "2026-02-17T00:00:00.000Z",
-    "updatedAt": "2026-02-17T00:00:00.000Z",
-    "params": {
-      "brand": "BMW",
-      "model": "X1",
-      "yearOfManufacture": "2016",
-      "transmission": "automatic",
-      "enginePower": 190
-    }
+    "price": 148000,
+    "createdAt": "2026-03-17T00:00:00.000Z",
+    "updatedAt": "2026-03-17T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Air 15", "condition": "used", "mileage": 5000 }
   },
   {
     "id": 18,
-    "category": "auto",
-    "title": "Mazda 6 2.0 AT, 2013",
+    "category": "electronics",
+    "title": "MacBook Air 15 M3 16/256GB",
     "description": "",
-    "price": 300000,
-    "createdAt": "2026-01-12T00:00:00.000Z",
-    "updatedAt": "2026-01-12T00:00:00.000Z",
-    "params": {
-      "brand": "Mazda",
-      "model": "6",
-      "transmission": "automatic",
-      "mileage": 250000
-    }
+    "price": 105000,
+    "createdAt": "2026-03-18T00:00:00.000Z",
+    "updatedAt": "2026-03-18T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Air 15", "condition": "used", "defects": "Не работает клавиша", "mileage": 35000 }
   },
   {
     "id": 19,
-    "category": "real_estate",
-    "title": "5-к. квартира, 156 м², 12/13 эт.",
+    "category": "electronics",
+    "title": "Sony PlayStation 5 Slim + FIFA 25",
     "description": "",
-    "price": 3700000,
-    "createdAt": "2026-02-14T00:00:00.000Z",
-    "updatedAt": "2026-02-14T00:00:00.000Z",
-    "params": {
-      "type": "flat",
-      "floor": 12,
-      "area": 156
-    }
+    "price": 85000,
+    "createdAt": "2026-03-19T00:00:00.000Z",
+    "updatedAt": "2026-03-19T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Sony", "model": "PlayStation 5 Slim", "condition": "new" }
   },
   {
     "id": 20,
     "category": "electronics",
-    "title": "Стиральная машина. На гарантии",
+    "title": "Sony PlayStation 5 Slim + FIFA 25",
     "description": "",
-    "price": 9999,
-    "createdAt": "2026-03-11T00:00:00.000Z",
-    "updatedAt": "2026-03-11T00:00:00.000Z",
-    "params": {}
+    "price": 72000,
+    "createdAt": "2026-03-20T00:00:00.000Z",
+    "updatedAt": "2026-03-20T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Sony", "model": "PlayStation 5 Slim", "condition": "used", "mileage": 500 }
   },
   {
     "id": 21,
     "category": "electronics",
-    "title": "Бу ноутбук Новый завоз",
+    "title": "Sony PlayStation 5 Slim + FIFA 25",
     "description": "",
-    "price": 11900,
-    "createdAt": "2026-01-08T00:00:00.000Z",
-    "updatedAt": "2026-01-08T00:00:00.000Z",
-    "params": {}
+    "price": 52000,
+    "createdAt": "2026-03-21T00:00:00.000Z",
+    "updatedAt": "2026-03-21T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Sony", "model": "PlayStation 5 Slim", "condition": "used", "defects": "Не читает диски", "mileage": 5000 }
   },
   {
     "id": 22,
     "category": "electronics",
-    "title": "Игровой монстр",
+    "title": "Xbox Series X 1TB",
     "description": "",
-    "price": 11990,
-    "createdAt": "2026-03-07T00:00:00.000Z",
-    "updatedAt": "2026-03-07T00:00:00.000Z",
-    "params": {
-      "type": "misc",
-      "color": "Красный"
-    }
+    "price": 72000,
+    "createdAt": "2026-03-22T00:00:00.000Z",
+    "updatedAt": "2026-03-22T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Microsoft", "model": "Xbox Series X", "condition": "new" }
   },
   {
     "id": 23,
-    "category": "real_estate",
-    "title": "Нужно брать!",
+    "category": "electronics",
+    "title": "Xbox Series X 1TB",
     "description": "",
-    "price": 100000,
-    "createdAt": "2026-02-26T00:00:00.000Z",
-    "updatedAt": "2026-02-26T00:00:00.000Z",
-    "params": {
-      "type": "flat",
-      "area": 60.3
-    }
+    "price": 58000,
+    "createdAt": "2026-03-23T00:00:00.000Z",
+    "updatedAt": "2026-03-23T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Microsoft", "model": "Xbox Series X", "condition": "used", "mileage": 2000 }
   },
   {
     "id": 24,
-    "category": "auto",
-    "title": "Для рыбалки самое то",
+    "category": "electronics",
+    "title": "Xbox Series X 1TB",
     "description": "",
-    "price": 500000,
-    "createdAt": "2026-03-10T00:00:00.000Z",
-    "updatedAt": "2026-03-10T00:00:00.000Z",
-    "params": {
-      "brand": "Lada",
-      "model": "Granta"
-    }
+    "price": 38000,
+    "createdAt": "2026-03-24T00:00:00.000Z",
+    "updatedAt": "2026-03-24T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Microsoft", "model": "Xbox Series X", "condition": "used", "defects": "Сломан контроллер", "mileage": 8000 }
   },
   {
     "id": 25,
-    "category": "real_estate",
-    "title": "Нужно брать!",
+    "category": "electronics",
+    "title": "Sony WH-1000XM5",
     "description": "",
-    "price": 100000,
-    "createdAt": "2026-03-06T00:00:00.000Z",
-    "updatedAt": "2026-03-06T00:00:00.000Z",
-    "params": {
-      "type": "flat"
-    }
+    "price": 35000,
+    "createdAt": "2026-02-01T00:00:00.000Z",
+    "updatedAt": "2026-02-01T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Sony", "model": "WH-1000XM5", "condition": "new" }
   },
   {
     "id": 26,
-    "category": "real_estate",
-    "title": "Идеальная дача",
+    "category": "electronics",
+    "title": "Sony WH-1000XM5",
     "description": "",
-    "price": 12500000,
+    "price": 28000,
     "createdAt": "2026-02-02T00:00:00.000Z",
     "updatedAt": "2026-02-02T00:00:00.000Z",
-    "params": {
-      "type": "house"
-    }
+    "params": { "type": "audio", "brand": "Sony", "model": "WH-1000XM5", "condition": "used", "mileage": 500 }
   },
   {
     "id": 27,
     "category": "electronics",
-    "title": "Убийца Apple",
+    "title": "Sony WH-1000XM5",
     "description": "",
-    "price": 13990,
-    "createdAt": "2026-01-13T00:00:00.000Z",
-    "updatedAt": "2026-01-13T00:00:00.000Z",
-    "params": {
-      "type": "phone",
-      "brand": "Xiaomi",
-      "model": "Redmi Note 14S",
-      "condition": "new",
-      "color": "Чёрный"
-    }
+    "price": 18000,
+    "createdAt": "2026-02-03T00:00:00.000Z",
+    "updatedAt": "2026-02-03T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Sony", "model": "WH-1000XM5", "condition": "used", "defects": "Не работает шумоподавление", "mileage": 3000 }
   },
   {
     "id": 28,
     "category": "electronics",
-    "title": "Саундбар Sony 5.1 HT-S40R",
+    "title": "AirPods Pro 2gen",
     "description": "",
-    "price": 15000,
-    "createdAt": "2026-02-28T00:00:00.000Z",
-    "updatedAt": "2026-02-28T00:00:00.000Z",
-    "params": {
-      "type": "misc",
-      "brand": "Sony",
-      "color": "Чёрный"
-    }
+    "price": 22000,
+    "createdAt": "2026-02-04T00:00:00.000Z",
+    "updatedAt": "2026-02-04T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Apple", "model": "AirPods Pro 2", "condition": "new" }
   },
   {
     "id": 29,
     "category": "electronics",
-    "title": "Телевизор Samsung с тумбой-кронштейном",
+    "title": "AirPods Pro 2gen",
     "description": "",
-    "price": 20000,
-    "createdAt": "2026-02-25T00:00:00.000Z",
-    "updatedAt": "2026-02-25T00:00:00.000Z",
-    "params": {
-      "type": "misc",
-      "brand": "Sony",
-      "color": "Чёрный"
-    }
+    "price": 16500,
+    "createdAt": "2026-02-05T00:00:00.000Z",
+    "updatedAt": "2026-02-05T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Apple", "model": "AirPods Pro 2", "condition": "used", "mileage": 200 }
   },
   {
     "id": 30,
-    "category": "real_estate",
-    "title": "Аренда кладовки",
+    "category": "electronics",
+    "title": "AirPods Pro 2gen",
     "description": "",
-    "price": 799,
-    "createdAt": "2026-03-02T00:00:00.000Z",
-    "updatedAt": "2026-03-02T00:00:00.000Z",
-    "params": {
-      "type": "room"
-    }
+    "price": 9500,
+    "createdAt": "2026-02-06T00:00:00.000Z",
+    "updatedAt": "2026-02-06T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Apple", "model": "AirPods Pro 2", "condition": "used", "defects": "Один наушник не работает" }
   },
   {
     "id": 31,
     "category": "auto",
-    "title": "Mercedes-Benz Actros",
+    "title": "Toyota Camry 2.5 AT, 2023, 15000 км",
     "description": "",
-    "price": 2460000,
-    "createdAt": "2026-03-08T00:00:00.000Z",
-    "updatedAt": "2026-03-08T00:00:00.000Z",
-    "params": {
-      "brand": "Mercedes-Benz",
-      "model": "Actros",
-      "yearOfManufacture": 2017,
-      "enginePower": 410
-    }
+    "price": 3200000,
+    "createdAt": "2026-01-15T00:00:00.000Z",
+    "updatedAt": "2026-01-15T00:00:00.000Z",
+    "params": { "brand": "Toyota", "model": "Camry", "year": 2023, "transmission": "automatic", "mileage": 15000, "condition": "new" }
   },
   {
     "id": 32,
     "category": "auto",
-    "title": "Daewoo Nexia",
+    "title": "Toyota Camry 2.5 AT, 2021, 65000 км",
+    "description": "",
+    "price": 2450000,
+    "createdAt": "2026-01-16T00:00:00.000Z",
+    "updatedAt": "2026-01-16T00:00:00.000Z",
+    "params": { "brand": "Toyota", "model": "Camry", "year": 2021, "transmission": "automatic", "mileage": 65000, "condition": "used" }
+  },
+  {
+    "id": 33,
+    "category": "auto",
+    "title": "Toyota Camry 2.5 AT, 2018, 145000 км",
+    "description": "",
+    "price": 1650000,
+    "createdAt": "2026-01-17T00:00:00.000Z",
+    "updatedAt": "2026-01-17T00:00:00.000Z",
+    "params": { "brand": "Toyota", "model": "Camry", "year": 2018, "transmission": "automatic", "mileage": 145000, "condition": "used", "defects": "ЛКП повреждено" }
+  },
+  {
+    "id": 34,
+    "category": "auto",
+    "title": "Hyundai Solaris 1.6 AT, 2022, 45000 км",
+    "description": "",
+    "price": 1650000,
+    "createdAt": "2026-01-18T00:00:00.000Z",
+    "updatedAt": "2026-01-18T00:00:00.000Z",
+    "params": { "brand": "Hyundai", "model": "Solaris", "year": 2022, "transmission": "automatic", "mileage": 45000, "condition": "used" }
+  },
+  {
+    "id": 35,
+    "category": "auto",
+    "title": "Hyundai Solaris 1.6 AT, 2019, 98000 км",
+    "description": "",
+    "price": 1150000,
+    "createdAt": "2026-01-19T00:00:00.000Z",
+    "updatedAt": "2026-01-19T00:00:00.000Z",
+    "params": { "brand": "Hyundai", "model": "Solaris", "year": 2019, "transmission": "automatic", "mileage": 98000, "condition": "used", "defects": "Коррозия" }
+  },
+  {
+    "id": 36,
+    "category": "auto",
+    "title": "Kia Rio 1.6 MT, 2021, 52000 км",
+    "description": "",
+    "price": 1350000,
+    "createdAt": "2026-01-20T00:00:00.000Z",
+    "updatedAt": "2026-01-20T00:00:00.000Z",
+    "params": { "brand": "Kia", "model": "Rio", "year": 2021, "transmission": "manual", "mileage": 52000, "condition": "used" }
+  },
+  {
+    "id": 37,
+    "category": "auto",
+    "title": "Kia Rio 1.6 MT, 2017, 125000 км",
+    "description": "",
+    "price": 780000,
+    "createdAt": "2026-01-21T00:00:00.000Z",
+    "updatedAt": "2026-01-21T00:00:00.000Z",
+    "params": { "brand": "Kia", "model": "Rio", "year": 2017, "transmission": "manual", "mileage": 125000, "condition": "used", "defects": "ДТП" }
+  },
+  {
+    "id": 38,
+    "category": "auto",
+    "title": "BMW 3 Series 320i AT, 2020, 78000 км",
+    "description": "",
+    "price": 2750000,
+    "createdAt": "2026-01-22T00:00:00.000Z",
+    "updatedAt": "2026-01-22T00:00:00.000Z",
+    "params": { "brand": "BMW", "model": "3 Series", "year": 2020, "transmission": "automatic", "mileage": 78000, "condition": "used" }
+  },
+  {
+    "id": 39,
+    "category": "auto",
+    "title": "BMW 3 Series 320i AT, 2016, 165000 км",
+    "description": "",
+    "price": 1450000,
+    "createdAt": "2026-01-23T00:00:00.000Z",
+    "updatedAt": "2026-01-23T00:00:00.000Z",
+    "params": { "brand": "BMW", "model": "3 Series", "year": 2016, "transmission": "automatic", "mileage": 165000, "condition": "used", "defects": "Требует ремонта" }
+  },
+  {
+    "id": 40,
+    "category": "auto",
+    "title": "Volkswagen Polo 1.6 AT, 2022, 38000 км",
+    "description": "",
+    "price": 1450000,
+    "createdAt": "2026-01-24T00:00:00.000Z",
+    "updatedAt": "2026-01-24T00:00:00.000Z",
+    "params": { "brand": "Volkswagen", "model": "Polo", "year": 2022, "transmission": "automatic", "mileage": 38000, "condition": "used" }
+  },
+  {
+    "id": 41,
+    "category": "auto",
+    "title": "Volkswagen Polo 1.6 AT, 2018, 110000 км",
+    "description": "",
+    "price": 890000,
+    "createdAt": "2026-01-25T00:00:00.000Z",
+    "updatedAt": "2026-01-25T00:00:00.000Z",
+    "params": { "brand": "Volkswagen", "model": "Polo", "year": 2018, "transmission": "automatic", "mileage": 110000, "condition": "used", "defects": "Сколы на кузове" }
+  },
+  {
+    "id": 42,
+    "category": "real_estate",
+    "title": "1-к. квартира, 42 м², 5/9 эт., м. Юго-Западная",
+    "description": "",
+    "price": 8500000,
+    "createdAt": "2026-01-10T00:00:00.000Z",
+    "updatedAt": "2026-01-10T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 1, "area": 42, "floor": 5, "totalFloors": 9, "metro": "Юго-Западная", "condition": "new" }
+  },
+  {
+    "id": 43,
+    "category": "real_estate",
+    "title": "1-к. квартира, 42 м², 5/9 эт., м. Юго-Западная",
+    "description": "",
+    "price": 7200000,
+    "createdAt": "2026-01-11T00:00:00.000Z",
+    "updatedAt": "2026-01-11T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 1, "area": 42, "floor": 5, "totalFloors": 9, "metro": "Юго-Западная", "condition": "used", "mileage": 15 }
+  },
+  {
+    "id": 44,
+    "category": "real_estate",
+    "title": "1-к. квартира, 42 м², 5/9 эт., м. Юго-Западная",
+    "description": "",
+    "price": 5500000,
+    "createdAt": "2026-01-12T00:00:00.000Z",
+    "updatedAt": "2026-01-12T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 1, "area": 42, "floor": 5, "totalFloors": 9, "metro": "Юго-Западная", "condition": "used", "defects": "Требует ремонта", "mileage": 40 }
+  },
+  {
+    "id": 45,
+    "category": "real_estate",
+    "title": "2-к. квартира, 65 м², 12/25 эт., м. Солнцево",
+    "description": "",
+    "price": 12500000,
+    "createdAt": "2026-01-13T00:00:00.000Z",
+    "updatedAt": "2026-01-13T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 2, "area": 65, "floor": 12, "totalFloors": 25, "metro": "Солнцево", "condition": "new" }
+  },
+  {
+    "id": 46,
+    "category": "real_estate",
+    "title": "2-к. квартира, 65 м², 12/25 эт., м. Солнцево",
+    "description": "",
+    "price": 10200000,
+    "createdAt": "2026-01-14T00:00:00.000Z",
+    "updatedAt": "2026-01-14T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 2, "area": 65, "floor": 12, "totalFloors": 25, "metro": "Солнцево", "condition": "used", "mileage": 5 }
+  },
+  {
+    "id": 47,
+    "category": "real_estate",
+    "title": "2-к. квартира, 65 м², 12/25 эт., м. Солнцево",
+    "description": "",
+    "price": 7800000,
+    "createdAt": "2026-01-15T00:00:00.000Z",
+    "updatedAt": "2026-01-15T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 2, "area": 65, "floor": 12, "totalFloors": 25, "metro": "Солнцево", "condition": "used", "defects": "Старый ремонт", "mileage": 25 }
+  },
+  {
+    "id": 48,
+    "category": "real_estate",
+    "title": "3-к. квартира, 95 м², 18/25 эт., м. Митино",
+    "description": "",
+    "price": 18500000,
+    "createdAt": "2026-01-16T00:00:00.000Z",
+    "updatedAt": "2026-01-16T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 3, "area": 95, "floor": 18, "totalFloors": 25, "metro": "Митино", "condition": "new" }
+  },
+  {
+    "id": 49,
+    "category": "real_estate",
+    "title": "3-к. квартира, 95 м², 18/25 эт., м. Митино",
+    "description": "",
+    "price": 15200000,
+    "createdAt": "2026-01-17T00:00:00.000Z",
+    "updatedAt": "2026-01-17T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 3, "area": 95, "floor": 18, "totalFloors": 25, "metro": "Митино", "condition": "used", "mileage": 8 }
+  },
+  {
+    "id": 50,
+    "category": "real_estate",
+    "title": "3-к. квартира, 95 м², 18/25 эт., м. Митино",
+    "description": "",
+    "price": 11500000,
+    "createdAt": "2026-01-18T00:00:00.000Z",
+    "updatedAt": "2026-01-18T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 3, "area": 95, "floor": 18, "totalFloors": 25, "metro": "Митино", "condition": "used", "defects": "Без ремонта", "mileage": 30 }
+  },
+  {
+    "id": 51,
+    "category": "real_estate",
+    "title": "Студия 25 м², 3/17 эт., м. Пражская",
+    "description": "",
+    "price": 5500000,
+    "createdAt": "2026-01-19T00:00:00.000Z",
+    "updatedAt": "2026-01-19T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 0, "area": 25, "floor": 3, "totalFloors": 17, "metro": "Пражская", "condition": "new" }
+  },
+  {
+    "id": 52,
+    "category": "real_estate",
+    "title": "Студия 25 м², 3/17 эт., м. Пражская",
+    "description": "",
+    "price": 4800000,
+    "createdAt": "2026-01-20T00:00:00.000Z",
+    "updatedAt": "2026-01-20T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 0, "area": 25, "floor": 3, "totalFloors": 17, "metro": "Пражская", "condition": "used", "mileage": 3 }
+  },
+  {
+    "id": 53,
+    "category": "real_estate",
+    "title": "Студия 25 м², 3/17 эт., м. Пражская",
+    "description": "",
+    "price": 3800000,
+    "createdAt": "2026-01-21T00:00:00.000Z",
+    "updatedAt": "2026-01-21T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 0, "area": 25, "floor": 3, "totalFloors": 17, "metro": "Пражская", "condition": "used", "defects": "Ветхая", "mileage": 20 }
+  },
+  {
+    "id": 54,
+    "category": "electronics",
+    "title": "Samsung OLED TV 65 дюймов QE65S95C",
     "description": "",
     "price": 185000,
+    "createdAt": "2026-02-10T00:00:00.000Z",
+    "updatedAt": "2026-02-10T00:00:00.000Z",
+    "params": { "type": "tv", "brand": "Samsung", "model": "QE65S95C", "size": 65, "condition": "new" }
+  },
+  {
+    "id": 55,
+    "category": "electronics",
+    "title": "Samsung OLED TV 65 дюймов QE65S95C",
+    "description": "",
+    "price": 145000,
+    "createdAt": "2026-02-11T00:00:00.000Z",
+    "updatedAt": "2026-02-11T00:00:00.000Z",
+    "params": { "type": "tv", "brand": "Samsung", "model": "QE65S95C", "size": 65, "condition": "used", "mileage": 2000 }
+  },
+  {
+    "id": 56,
+    "category": "electronics",
+    "title": "Samsung OLED TV 65 дюймов QE65S95C",
+    "description": "",
+    "price": 95000,
+    "createdAt": "2026-02-12T00:00:00.000Z",
+    "updatedAt": "2026-02-12T00:00:00.000Z",
+    "params": { "type": "tv", "brand": "Samsung", "model": "QE65S95C", "size": 65, "condition": "used", "defects": "Битый пиксель", "mileage": 15000 }
+  },
+  {
+    "id": 57,
+    "category": "electronics",
+    "title": "LG C3 OLED 55 дюймов",
+    "description": "",
+    "price": 125000,
+    "createdAt": "2026-02-13T00:00:00.000Z",
+    "updatedAt": "2026-02-13T00:00:00.000Z",
+    "params": { "type": "tv", "brand": "LG", "model": "OLED55C3", "size": 55, "condition": "new" }
+  },
+  {
+    "id": 58,
+    "category": "electronics",
+    "title": "LG C3 OLED 55 дюймов",
+    "description": "",
+    "price": 98000,
+    "createdAt": "2026-02-14T00:00:00.000Z",
+    "updatedAt": "2026-02-14T00:00:00.000Z",
+    "params": { "type": "tv", "brand": "LG", "model": "OLED55C3", "size": 55, "condition": "used", "mileage": 1500 }
+  },
+  {
+    "id": 59,
+    "category": "electronics",
+    "title": "LG C3 OLED 55 дюймов",
+    "description": "",
+    "price": 65000,
+    "createdAt": "2026-02-15T00:00:00.000Z",
+    "updatedAt": "2026-02-15T00:00:00.000Z",
+    "params": { "type": "tv", "brand": "LG", "model": "OLED55C3", "size": 55, "condition": "used", "defects": "Не работает HDMI", "mileage": 8000 }
+  },
+  {
+    "id": 60,
+    "category": "electronics",
+    "title": "Sony PlayStation VR2 + Horizon Call of the Mountain",
+    "description": "",
+    "price": 95000,
+    "createdAt": "2026-02-16T00:00:00.000Z",
+    "updatedAt": "2026-02-16T00:00:00.000Z",
+    "params": { "type": "vr", "brand": "Sony", "model": "PlayStation VR2", "condition": "new" }
+  },
+  {
+    "id": 61,
+    "category": "electronics",
+    "title": "Sony PlayStation VR2 + Horizon Call of the Mountain",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-02-17T00:00:00.000Z",
+    "updatedAt": "2026-02-17T00:00:00.000Z",
+    "params": { "type": "vr", "brand": "Sony", "model": "PlayStation VR2", "condition": "used", "mileage": 50 }
+  },
+  {
+    "id": 62,
+    "category": "electronics",
+    "title": "Sony PlayStation VR2 + Horizon Call of the Mountain",
+    "description": "",
+    "price": 48000,
+    "createdAt": "2026-02-18T00:00:00.000Z",
+    "updatedAt": "2026-02-18T00:00:00.000Z",
+    "params": { "type": "vr", "brand": "Sony", "model": "PlayStation VR2", "condition": "used", "defects": "Не работают контроллеры", "mileage": 500 }
+  },
+  {
+    "id": 63,
+    "category": "electronics",
+    "title": "DJI Mini 4 Pro + Fly More Combo",
+    "description": "",
+    "price": 135000,
+    "createdAt": "2026-02-19T00:00:00.000Z",
+    "updatedAt": "2026-02-19T00:00:00.000Z",
+    "params": { "type": "drone", "brand": "DJI", "model": "Mini 4 Pro", "condition": "new" }
+  },
+  {
+    "id": 64,
+    "category": "electronics",
+    "title": "DJI Mini 4 Pro + Fly More Combo",
+    "description": "",
+    "price": 105000,
+    "createdAt": "2026-02-20T00:00:00.000Z",
+    "updatedAt": "2026-02-20T00:00:00.000Z",
+    "params": { "type": "drone", "brand": "DJI", "model": "Mini 4 Pro", "condition": "used", "mileage": 5 }
+  },
+  {
+    "id": 65,
+    "category": "electronics",
+    "title": "DJI Mini 4 Pro + Fly More Combo",
+    "description": "",
+    "price": 72000,
+    "createdAt": "2026-02-21T00:00:00.000Z",
+    "updatedAt": "2026-02-21T00:00:00.000Z",
+    "params": { "type": "drone", "brand": "DJI", "model": "Mini 4 Pro", "condition": "used", "defects": "Повреждён пропеллер", "mileage": 45 }
+  },
+  {
+    "id": 66,
+    "category": "electronics",
+    "title": "iPad Pro 12.9 M4 256GB Wi-Fi",
+    "description": "",
+    "price": 165000,
+    "createdAt": "2026-02-22T00:00:00.000Z",
+    "updatedAt": "2026-02-22T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Apple", "model": "iPad Pro 12.9", "condition": "new" }
+  },
+  {
+    "id": 67,
+    "category": "electronics",
+    "title": "iPad Pro 12.9 M4 256GB Wi-Fi",
+    "description": "",
+    "price": 138000,
+    "createdAt": "2026-02-23T00:00:00.000Z",
+    "updatedAt": "2026-02-23T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Apple", "model": "iPad Pro 12.9", "condition": "used", "mileage": 1000 }
+  },
+  {
+    "id": 68,
+    "category": "electronics",
+    "title": "iPad Pro 12.9 M4 256GB Wi-Fi",
+    "description": "",
+    "price": 92000,
+    "createdAt": "2026-02-24T00:00:00.000Z",
+    "updatedAt": "2026-02-24T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Apple", "model": "iPad Pro 12.9", "condition": "used", "defects": "Разбит экран", "mileage": 8000 }
+  },
+  {
+    "id": 69,
+    "category": "electronics",
+    "title": "Samsung Galaxy Tab S9 Ultra 512GB",
+    "description": "",
+    "price": 145000,
+    "createdAt": "2026-02-25T00:00:00.000Z",
+    "updatedAt": "2026-02-25T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Samsung", "model": "Galaxy Tab S9 Ultra", "condition": "new" }
+  },
+  {
+    "id": 70,
+    "category": "electronics",
+    "title": "Samsung Galaxy Tab S9 Ultra 512GB",
+    "description": "",
+    "price": 118000,
+    "createdAt": "2026-02-26T00:00:00.000Z",
+    "updatedAt": "2026-02-26T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Samsung", "model": "Galaxy Tab S9 Ultra", "condition": "used", "mileage": 2000 }
+  },
+  {
+    "id": 71,
+    "category": "electronics",
+    "title": "Samsung Galaxy Tab S9 Ultra 512GB",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-02-27T00:00:00.000Z",
+    "updatedAt": "2026-02-27T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Samsung", "model": "Galaxy Tab S9 Ultra", "condition": "used", "defects": "Не заряжается", "mileage": 12000 }
+  },
+  {
+    "id": 72,
+    "category": "electronics",
+    "title": "Apple Watch Ultra 2 49mm",
+    "description": "",
+    "price": 95000,
+    "createdAt": "2026-02-28T00:00:00.000Z",
+    "updatedAt": "2026-02-28T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Apple", "model": "Watch Ultra 2", "size": 49, "condition": "new" }
+  },
+  {
+    "id": 73,
+    "category": "electronics",
+    "title": "Apple Watch Ultra 2 49mm",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-03-01T00:00:00.000Z",
+    "updatedAt": "2026-03-01T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Apple", "model": "Watch Ultra 2", "size": 49, "condition": "used", "mileage": 500 }
+  },
+  {
+    "id": 74,
+    "category": "electronics",
+    "title": "Apple Watch Ultra 2 49mm",
+    "description": "",
+    "price": 52000,
+    "createdAt": "2026-03-02T00:00:00.000Z",
+    "updatedAt": "2026-03-02T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Apple", "model": "Watch Ultra 2", "size": 49, "condition": "used", "defects": "Трещина на стекле", "mileage": 3000 }
+  },
+  {
+    "id": 75,
+    "category": "electronics",
+    "title": "Garmin Fenix 7X Pro",
+    "description": "",
+    "price": 85000,
+    "createdAt": "2026-03-03T00:00:00.000Z",
+    "updatedAt": "2026-03-03T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Garmin", "model": "Fenix 7X Pro", "size": 51, "condition": "new" }
+  },
+  {
+    "id": 76,
+    "category": "electronics",
+    "title": "Garmin Fenix 7X Pro",
+    "description": "",
+    "price": 68000,
+    "createdAt": "2026-03-04T00:00:00.000Z",
+    "updatedAt": "2026-03-04T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Garmin", "model": "Fenix 7X Pro", "size": 51, "condition": "used", "mileage": 800 }
+  },
+  {
+    "id": 77,
+    "category": "electronics",
+    "title": "Garmin Fenix 7X Pro",
+    "description": "",
+    "price": 45000,
+    "createdAt": "2026-03-05T00:00:00.000Z",
+    "updatedAt": "2026-03-05T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Garmin", "model": "Fenix 7X Pro", "size": 51, "condition": "used", "defects": "Не работает пульсометр", "mileage": 5000 }
+  },
+  {
+    "id": 78,
+    "category": "electronics",
+    "title": "Робот-пылесос Roborock S8 MaxV Ultra",
+    "description": "",
+    "price": 125000,
+    "createdAt": "2026-03-06T00:00:00.000Z",
+    "updatedAt": "2026-03-06T00:00:00.000Z",
+    "params": { "type": "home", "brand": "Roborock", "model": "S8 MaxV Ultra", "condition": "new" }
+  },
+  {
+    "id": 79,
+    "category": "electronics",
+    "title": "Робот-пылесос Roborock S8 MaxV Ultra",
+    "description": "",
+    "price": 95000,
+    "createdAt": "2026-03-07T00:00:00.000Z",
+    "updatedAt": "2026-03-07T00:00:00.000Z",
+    "params": { "type": "home", "brand": "Roborock", "model": "S8 MaxV Ultra", "condition": "used", "mileage": 100 }
+  },
+  {
+    "id": 80,
+    "category": "electronics",
+    "title": "Робот-пылесос Roborock S8 MaxV Ultra",
+    "description": "",
+    "price": 58000,
+    "createdAt": "2026-03-08T00:00:00.000Z",
+    "updatedAt": "2026-03-08T00:00:00.000Z",
+    "params": { "type": "home", "brand": "Roborock", "model": "S8 MaxV Ultra", "condition": "used", "defects": "Не работает станция", "mileage": 2000 }
+  },
+  {
+    "id": 81,
+    "category": "electronics",
+    "title": "Steam Deck OLED 512GB",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-03-09T00:00:00.000Z",
+    "updatedAt": "2026-03-09T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Valve", "model": "Steam Deck OLED", "condition": "new" }
+  },
+  {
+    "id": 82,
+    "category": "electronics",
+    "title": "Steam Deck OLED 512GB",
+    "description": "",
+    "price": 62000,
     "createdAt": "2026-03-10T00:00:00.000Z",
     "updatedAt": "2026-03-10T00:00:00.000Z",
-    "params": {}
+    "params": { "type": "gaming", "brand": "Valve", "model": "Steam Deck OLED", "condition": "used", "mileage": 300 }
+  },
+  {
+    "id": 83,
+    "category": "electronics",
+    "title": "Steam Deck OLED 512GB",
+    "description": "",
+    "price": 38000,
+    "createdAt": "2026-03-11T00:00:00.000Z",
+    "updatedAt": "2026-03-11T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Valve", "model": "Steam Deck OLED", "condition": "used", "defects": "Проблемы с экраном", "mileage": 2500 }
+  },
+  {
+    "id": 84,
+    "category": "electronics",
+    "title": "Nintendo Switch OLED + Pro Controller",
+    "description": "",
+    "price": 42000,
+    "createdAt": "2026-03-12T00:00:00.000Z",
+    "updatedAt": "2026-03-12T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Nintendo", "model": "Switch OLED", "condition": "new" }
+  },
+  {
+    "id": 85,
+    "category": "electronics",
+    "title": "Nintendo Switch OLED + Pro Controller",
+    "description": "",
+    "price": 34000,
+    "createdAt": "2026-03-13T00:00:00.000Z",
+    "updatedAt": "2026-03-13T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Nintendo", "model": "Switch OLED", "condition": "used", "mileage": 200 }
+  },
+  {
+    "id": 86,
+    "category": "electronics",
+    "title": "Nintendo Switch OLED + Pro Controller",
+    "description": "",
+    "price": 22000,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-14T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Nintendo", "model": "Switch OLED", "condition": "used", "defects": "Не работает док", "mileage": 3000 }
+  },
+  {
+    "id": 87,
+    "category": "electronics",
+    "title": "JBL PartyBox 310",
+    "description": "",
+    "price": 35000,
+    "createdAt": "2026-03-15T00:00:00.000Z",
+    "updatedAt": "2026-03-15T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "JBL", "model": "PartyBox 310", "condition": "new" }
+  },
+  {
+    "id": 88,
+    "category": "electronics",
+    "title": "JBL PartyBox 310",
+    "description": "",
+    "price": 27000,
+    "createdAt": "2026-03-16T00:00:00.000Z",
+    "updatedAt": "2026-03-16T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "JBL", "model": "PartyBox 310", "condition": "used", "mileage": 50 }
+  },
+  {
+    "id": 89,
+    "category": "electronics",
+    "title": "JBL PartyBox 310",
+    "description": "",
+    "price": 15000,
+    "createdAt": "2026-03-17T00:00:00.000Z",
+    "updatedAt": "2026-03-17T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "JBL", "model": "PartyBox 310", "condition": "used", "defects": "Хрипит динамик", "mileage": 500 }
+  },
+  {
+    "id": 90,
+    "category": "real_estate",
+    "title": "Дача 6 сот., СНТ Подмосковье",
+    "description": "",
+    "price": 3500000,
+    "createdAt": "2026-01-25T00:00:00.000Z",
+    "updatedAt": "2026-01-25T00:00:00.000Z",
+    "params": { "type": "house", "area": 60, "landArea": 6, "condition": "new" }
+  },
+  {
+    "id": 91,
+    "category": "real_estate",
+    "title": "Дача 6 сот., СНТ Подмосковье",
+    "description": "",
+    "price": 2800000,
+    "createdAt": "2026-01-26T00:00:00.000Z",
+    "updatedAt": "2026-01-26T00:00:00.000Z",
+    "params": { "type": "house", "area": 60, "landArea": 6, "condition": "used", "mileage": 10 }
+  },
+  {
+    "id": 92,
+    "category": "real_estate",
+    "title": "Дача 6 сот., СНТ Подмосковье",
+    "description": "",
+    "price": 1800000,
+    "createdAt": "2026-01-27T00:00:00.000Z",
+    "updatedAt": "2026-01-27T00:00:00.000Z",
+    "params": { "type": "house", "area": 60, "landArea": 6, "condition": "used", "defects": "Требует капремонта", "mileage": 30 }
+  },
+  {
+    "id": 93,
+    "category": "real_estate",
+    "title": "Коттедж 180 м², 10 сот., Новая Рига",
+    "description": "",
+    "price": 28000000,
+    "createdAt": "2026-01-28T00:00:00.000Z",
+    "updatedAt": "2026-01-28T00:00:00.000Z",
+    "params": { "type": "house", "area": 180, "landArea": 10, "metro": "Новая Рига", "condition": "new" }
+  },
+  {
+    "id": 94,
+    "category": "real_estate",
+    "title": "Коттедж 180 м², 10 сот., Новая Рига",
+    "description": "",
+    "price": 22000000,
+    "createdAt": "2026-01-29T00:00:00.000Z",
+    "updatedAt": "2026-01-29T00:00:00.000Z",
+    "params": { "type": "house", "area": 180, "landArea": 10, "metro": "Новая Рига", "condition": "used", "mileage": 5 }
+  },
+  {
+    "id": 95,
+    "category": "real_estate",
+    "title": "Коттедж 180 м², 10 сот., Новая Рига",
+    "description": "",
+    "price": 15000000,
+    "createdAt": "2026-01-30T00:00:00.000Z",
+    "updatedAt": "2026-01-30T00:00:00.000Z",
+    "params": { "type": "house", "area": 180, "landArea": 10, "metro": "Новая Рига", "condition": "used", "defects": "Частичный ремонт", "mileage": 15 }
+  },
+  {
+    "id": 96,
+    "category": "electronics",
+    "title": "GoPro Hero 12 Black",
+    "description": "",
+    "price": 55000,
+    "createdAt": "2026-03-18T00:00:00.000Z",
+    "updatedAt": "2026-03-18T00:00:00.000Z",
+    "params": { "type": "camera", "brand": "GoPro", "model": "Hero 12 Black", "condition": "new" }
+  },
+  {
+    "id": 97,
+    "category": "electronics",
+    "title": "GoPro Hero 12 Black",
+    "description": "",
+    "price": 42000,
+    "createdAt": "2026-03-19T00:00:00.000Z",
+    "updatedAt": "2026-03-19T00:00:00.000Z",
+    "params": { "type": "camera", "brand": "GoPro", "model": "Hero 12 Black", "condition": "used", "mileage": 20 }
+  },
+  {
+    "id": 98,
+    "category": "electronics",
+    "title": "GoPro Hero 12 Black",
+    "description": "",
+    "price": 25000,
+    "createdAt": "2026-03-20T00:00:00.000Z",
+    "updatedAt": "2026-03-20T00:00:00.000Z",
+    "params": { "type": "camera", "brand": "GoPro", "model": "Hero 12 Black", "condition": "used", "defects": "Не включается", "mileage": 500 }
+  },
+  {
+    "id": 99,
+    "category": "auto",
+    "title": "Tesla Model 3 Long Range, 2023, 25000 км",
+    "description": "",
+    "price": 4500000,
+    "createdAt": "2026-02-01T00:00:00.000Z",
+    "updatedAt": "2026-02-01T00:00:00.000Z",
+    "params": { "brand": "Tesla", "model": "Model 3", "year": 2023, "transmission": "automatic", "mileage": 25000, "condition": "used" }
+  },
+  {
+    "id": 100,
+    "category": "auto",
+    "title": "Tesla Model 3 Long Range, 2021, 85000 км",
+    "description": "",
+    "price": 2800000,
+    "createdAt": "2026-02-02T00:00:00.000Z",
+    "updatedAt": "2026-02-02T00:00:00.000Z",
+    "params": { "brand": "Tesla", "model": "Model 3", "year": 2021, "transmission": "automatic", "mileage": 85000, "condition": "used", "defects": "Замена батареи" }
+  },
+  {
+    "id": 101,
+    "category": "auto",
+    "title": "Lada Vesta Sport, 2022, 32000 км",
+    "description": "",
+    "price": 1450000,
+    "createdAt": "2026-02-03T00:00:00.000Z",
+    "updatedAt": "2026-02-03T00:00:00.000Z",
+    "params": { "brand": "Lada", "model": "Vesta Sport", "year": 2022, "transmission": "manual", "mileage": 32000, "condition": "used" }
+  },
+  {
+    "id": 102,
+    "category": "auto",
+    "title": "Lada Vesta Sport, 2019, 95000 км",
+    "description": "",
+    "price": 850000,
+    "createdAt": "2026-02-04T00:00:00.000Z",
+    "updatedAt": "2026-02-04T00:00:00.000Z",
+    "params": { "brand": "Lada", "model": "Vesta Sport", "year": 2019, "transmission": "manual", "mileage": 95000, "condition": "used", "defects": "ДТП" }
+  },
+  {
+    "id": 103,
+    "category": "electronics",
+    "title": "Dyson V15 Detect",
+    "description": "",
+    "price": 65000,
+    "createdAt": "2026-03-21T00:00:00.000Z",
+    "updatedAt": "2026-03-21T00:00:00.000Z",
+    "params": { "type": "home", "brand": "Dyson", "model": "V15 Detect", "condition": "new" }
+  },
+  {
+    "id": 104,
+    "category": "electronics",
+    "title": "Dyson V15 Detect",
+    "description": "",
+    "price": 48000,
+    "createdAt": "2026-03-22T00:00:00.000Z",
+    "updatedAt": "2026-03-22T00:00:00.000Z",
+    "params": { "type": "home", "brand": "Dyson", "model": "V15 Detect", "condition": "used", "mileage": 50 }
+  },
+  {
+    "id": 105,
+    "category": "electronics",
+    "title": "Dyson V15 Detect",
+    "description": "",
+    "price": 28000,
+    "createdAt": "2026-03-23T00:00:00.000Z",
+    "updatedAt": "2026-03-23T00:00:00.000Z",
+    "params": { "type": "home", "brand": "Dyson", "model": "V15 Detect", "condition": "used", "defects": "Не держит заряд", "mileage": 500 }
+  },
+  {
+    "id": 106,
+    "category": "electronics",
+    "title": " Kindle Paperwhite Signature Edition",
+    "description": "",
+    "price": 28000,
+    "createdAt": "2026-02-05T00:00:00.000Z",
+    "updatedAt": "2026-02-05T00:00:00.000Z",
+    "params": { "type": "reader", "brand": "Amazon", "model": "Kindle Paperwhite SE", "condition": "new" }
+  },
+  {
+    "id": 107,
+    "category": "electronics",
+    "title": "Kindle Paperwhite Signature Edition",
+    "description": "",
+    "price": 22000,
+    "createdAt": "2026-02-06T00:00:00.000Z",
+    "updatedAt": "2026-02-06T00:00:00.000Z",
+    "params": { "type": "reader", "brand": "Amazon", "model": "Kindle Paperwhite SE", "condition": "used", "mileage": 100 }
+  },
+  {
+    "id": 108,
+    "category": "electronics",
+    "title": "Kindle Paperwhite Signature Edition",
+    "description": "",
+    "price": 12000,
+    "createdAt": "2026-02-07T00:00:00.000Z",
+    "updatedAt": "2026-02-07T00:00:00.000Z",
+    "params": { "type": "reader", "brand": "Amazon", "model": "Kindle Paperwhite SE", "condition": "used", "defects": "Разбит экран", "mileage": 500 }
+  },
+  {
+    "id": 109,
+    "category": "electronics",
+    "title": "iPhone 15 Pro Max 256GB",
+    "description": "",
+    "price": 142000,
+    "createdAt": "2026-03-05T00:00:00.000Z",
+    "updatedAt": "2026-03-05T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro Max", "condition": "new", "color": "Чёрный" }
+  },
+  {
+    "id": 110,
+    "category": "electronics",
+    "title": "iPhone 15 Pro Max 256GB",
+    "description": "",
+    "price": 118000,
+    "createdAt": "2026-03-06T00:00:00.000Z",
+    "updatedAt": "2026-03-06T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro Max", "condition": "used", "mileage": 8000 }
+  },
+  {
+    "id": 111,
+    "category": "electronics",
+    "title": "iPhone 15 Pro Max 256GB",
+    "description": "",
+    "price": 88000,
+    "createdAt": "2026-03-07T00:00:00.000Z",
+    "updatedAt": "2026-03-07T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro Max", "condition": "used", "defects": "Царапины на корпусе", "mileage": 35000 }
+  },
+  {
+    "id": 112,
+    "category": "electronics",
+    "title": "iPhone 15 Pro 128GB",
+    "description": "",
+    "price": 125000,
+    "createdAt": "2026-03-08T00:00:00.000Z",
+    "updatedAt": "2026-03-08T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro", "condition": "new", "color": "Белый" }
+  },
+  {
+    "id": 113,
+    "category": "electronics",
+    "title": "iPhone 15 Pro 128GB",
+    "description": "",
+    "price": 102000,
+    "createdAt": "2026-03-09T00:00:00.000Z",
+    "updatedAt": "2026-03-09T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro", "condition": "used", "mileage": 12000 }
+  },
+  {
+    "id": 114,
+    "category": "electronics",
+    "title": "iPhone 15 Pro 128GB",
+    "description": "",
+    "price": 75000,
+    "createdAt": "2026-03-10T00:00:00.000Z",
+    "updatedAt": "2026-03-10T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Apple", "model": "iPhone 15 Pro", "condition": "used", "defects": "Не работает камера", "mileage": 50000 }
+  },
+  {
+    "id": 115,
+    "category": "electronics",
+    "title": "Samsung Galaxy S24 256GB",
+    "description": "",
+    "price": 95000,
+    "createdAt": "2026-03-11T00:00:00.000Z",
+    "updatedAt": "2026-03-11T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Samsung", "model": "Galaxy S24", "condition": "new" }
+  },
+  {
+    "id": 116,
+    "category": "electronics",
+    "title": "Samsung Galaxy S24 256GB",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-03-12T00:00:00.000Z",
+    "updatedAt": "2026-03-12T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Samsung", "model": "Galaxy S24", "condition": "used", "mileage": 6000 }
+  },
+  {
+    "id": 117,
+    "category": "electronics",
+    "title": "Samsung Galaxy S24 256GB",
+    "description": "",
+    "price": 52000,
+    "createdAt": "2026-03-13T00:00:00.000Z",
+    "updatedAt": "2026-03-13T00:00:00.000Z",
+    "params": { "type": "phone", "brand": "Samsung", "model": "Galaxy S24", "condition": "used", "defects": "Батарея вздулась", "mileage": 45000 }
+  },
+  {
+    "id": 118,
+    "category": "electronics",
+    "title": "MacBook Pro 16 M3 Max 36/1TB",
+    "description": "",
+    "price": 420000,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-14T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Pro 16", "condition": "new" }
+  },
+  {
+    "id": 119,
+    "category": "electronics",
+    "title": "MacBook Pro 16 M3 Max 36/1TB",
+    "description": "",
+    "price": 355000,
+    "createdAt": "2026-03-15T00:00:00.000Z",
+    "updatedAt": "2026-03-15T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Pro 16", "condition": "used", "mileage": 5000 }
+  },
+  {
+    "id": 120,
+    "category": "electronics",
+    "title": "MacBook Pro 16 M3 Max 36/1TB",
+    "description": "",
+    "price": 265000,
+    "createdAt": "2026-03-16T00:00:00.000Z",
+    "updatedAt": "2026-03-16T00:00:00.000Z",
+    "params": { "type": "laptop", "brand": "Apple", "model": "MacBook Pro 16", "condition": "used", "defects": "Клавиатура не работает", "mileage": 30000 }
+  },
+  {
+    "id": 121,
+    "category": "electronics",
+    "title": "Sony PlayStation 5",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-03-17T00:00:00.000Z",
+    "updatedAt": "2026-03-17T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Sony", "model": "PlayStation 5", "condition": "new" }
+  },
+  {
+    "id": 122,
+    "category": "electronics",
+    "title": "Sony PlayStation 5",
+    "description": "",
+    "price": 65000,
+    "createdAt": "2026-03-18T00:00:00.000Z",
+    "updatedAt": "2026-03-18T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Sony", "model": "PlayStation 5", "condition": "used", "mileage": 300 }
+  },
+  {
+    "id": 123,
+    "category": "electronics",
+    "title": "Sony PlayStation 5",
+    "description": "",
+    "price": 42000,
+    "createdAt": "2026-03-19T00:00:00.000Z",
+    "updatedAt": "2026-03-19T00:00:00.000Z",
+    "params": { "type": "gaming", "brand": "Sony", "model": "PlayStation 5", "condition": "used", "defects": "Не работает HDMI", "mileage": 8000 }
+  },
+  {
+    "id": 124,
+    "category": "auto",
+    "title": "Toyota Corolla 1.6 AT, 2022, 35000 км",
+    "description": "",
+    "price": 2100000,
+    "createdAt": "2026-01-26T00:00:00.000Z",
+    "updatedAt": "2026-01-26T00:00:00.000Z",
+    "params": { "brand": "Toyota", "model": "Corolla", "year": 2022, "transmission": "automatic", "mileage": 35000, "condition": "used" }
+  },
+  {
+    "id": 125,
+    "category": "auto",
+    "title": "Toyota Corolla 1.6 AT, 2019, 95000 км",
+    "description": "",
+    "price": 1350000,
+    "createdAt": "2026-01-27T00:00:00.000Z",
+    "updatedAt": "2026-01-27T00:00:00.000Z",
+    "params": { "brand": "Toyota", "model": "Corolla", "year": 2019, "transmission": "automatic", "mileage": 95000, "condition": "used", "defects": "Коррозия на арках" }
+  },
+  {
+    "id": 126,
+    "category": "auto",
+    "title": "Hyundai Creta 2.0 AT, 2021, 58000 км",
+    "description": "",
+    "price": 1850000,
+    "createdAt": "2026-01-28T00:00:00.000Z",
+    "updatedAt": "2026-01-28T00:00:00.000Z",
+    "params": { "brand": "Hyundai", "model": "Creta", "year": 2021, "transmission": "automatic", "mileage": 58000, "condition": "used" }
+  },
+  {
+    "id": 127,
+    "category": "auto",
+    "title": "Hyundai Creta 2.0 AT, 2018, 120000 км",
+    "description": "",
+    "price": 1150000,
+    "createdAt": "2026-01-29T00:00:00.000Z",
+    "updatedAt": "2026-01-29T00:00:00.000Z",
+    "params": { "brand": "Hyundai", "model": "Creta", "year": 2018, "transmission": "automatic", "mileage": 120000, "condition": "used", "defects": "ДТП задняя часть" }
+  },
+  {
+    "id": 128,
+    "category": "auto",
+    "title": "Kia Sportage 2.0 AT, 2020, 65000 км",
+    "description": "",
+    "price": 1950000,
+    "createdAt": "2026-01-30T00:00:00.000Z",
+    "updatedAt": "2026-01-30T00:00:00.000Z",
+    "params": { "brand": "Kia", "model": "Sportage", "year": 2020, "transmission": "automatic", "mileage": 65000, "condition": "used" }
+  },
+  {
+    "id": 129,
+    "category": "auto",
+    "title": "Kia Sportage 2.0 AT, 2017, 140000 км",
+    "description": "",
+    "price": 1050000,
+    "createdAt": "2026-01-31T00:00:00.000Z",
+    "updatedAt": "2026-01-31T00:00:00.000Z",
+    "params": { "brand": "Kia", "model": "Sportage", "year": 2017, "transmission": "automatic", "mileage": 140000, "condition": "used", "defects": "Много вмятин" }
+  },
+  {
+    "id": 130,
+    "category": "auto",
+    "title": "BMW X5 xDrive40i, 2021, 55000 км",
+    "description": "",
+    "price": 5200000,
+    "createdAt": "2026-02-01T00:00:00.000Z",
+    "updatedAt": "2026-02-01T00:00:00.000Z",
+    "params": { "brand": "BMW", "model": "X5", "year": 2021, "transmission": "automatic", "mileage": 55000, "condition": "used" }
+  },
+  {
+    "id": 131,
+    "category": "auto",
+    "title": "BMW X5 xDrive40i, 2018, 135000 км",
+    "description": "",
+    "price": 2850000,
+    "createdAt": "2026-02-02T00:00:00.000Z",
+    "updatedAt": "2026-02-02T00:00:00.000Z",
+    "params": { "brand": "BMW", "model": "X5", "year": 2018, "transmission": "automatic", "mileage": 135000, "condition": "used", "defects": "Требует вложений" }
+  },
+  {
+    "id": 132,
+    "category": "auto",
+    "title": "Mercedes-Benz E-Class E300, 2020, 48000 км",
+    "description": "",
+    "price": 3800000,
+    "createdAt": "2026-02-03T00:00:00.000Z",
+    "updatedAt": "2026-02-03T00:00:00.000Z",
+    "params": { "brand": "Mercedes-Benz", "model": "E-Class", "year": 2020, "transmission": "automatic", "mileage": 48000, "condition": "used" }
+  },
+  {
+    "id": 133,
+    "category": "auto",
+    "title": "Mercedes-Benz E-Class E300, 2016, 155000 км",
+    "description": "",
+    "price": 1750000,
+    "createdAt": "2026-02-04T00:00:00.000Z",
+    "updatedAt": "2026-02-04T00:00:00.000Z",
+    "params": { "brand": "Mercedes-Benz", "model": "E-Class", "year": 2016, "transmission": "automatic", "mileage": 155000, "condition": "used", "defects": "Проблемы с АКПП" }
+  },
+  {
+    "id": 134,
+    "category": "real_estate",
+    "title": "1-к. квартира, 38 м², 3/12 эт., м. Щёлковская",
+    "description": "",
+    "price": 7200000,
+    "createdAt": "2026-02-05T00:00:00.000Z",
+    "updatedAt": "2026-02-05T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 1, "area": 38, "floor": 3, "totalFloors": 12, "metro": "Щёлковская", "condition": "new" }
+  },
+  {
+    "id": 135,
+    "category": "real_estate",
+    "title": "1-к. квартира, 38 м², 3/12 эт., м. Щёлковская",
+    "description": "",
+    "price": 6100000,
+    "createdAt": "2026-02-06T00:00:00.000Z",
+    "updatedAt": "2026-02-06T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 1, "area": 38, "floor": 3, "totalFloors": 12, "metro": "Щёлковская", "condition": "used", "mileage": 8 }
+  },
+  {
+    "id": 136,
+    "category": "real_estate",
+    "title": "1-к. квартира, 38 м², 3/12 эт., м. Щёлковская",
+    "description": "",
+    "price": 4800000,
+    "createdAt": "2026-02-07T00:00:00.000Z",
+    "updatedAt": "2026-02-07T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 1, "area": 38, "floor": 3, "totalFloors": 12, "metro": "Щёлковская", "condition": "used", "defects": "Ветхая отделка", "mileage": 35 }
+  },
+  {
+    "id": 137,
+    "category": "real_estate",
+    "title": "2-к. квартира, 72 м², 8/17 эт., м. Домодедовская",
+    "description": "",
+    "price": 14200000,
+    "createdAt": "2026-02-08T00:00:00.000Z",
+    "updatedAt": "2026-02-08T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 2, "area": 72, "floor": 8, "totalFloors": 17, "metro": "Домодедовская", "condition": "new" }
+  },
+  {
+    "id": 138,
+    "category": "real_estate",
+    "title": "2-к. квартира, 72 м², 8/17 эт., м. Домодедовская",
+    "description": "",
+    "price": 11800000,
+    "createdAt": "2026-02-09T00:00:00.000Z",
+    "updatedAt": "2026-02-09T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 2, "area": 72, "floor": 8, "totalFloors": 17, "metro": "Домодедовская", "condition": "used", "mileage": 10 }
+  },
+  {
+    "id": 139,
+    "category": "real_estate",
+    "title": "2-к. квартира, 72 м², 8/17 эт., м. Домодедовская",
+    "description": "",
+    "price": 8800000,
+    "createdAt": "2026-02-10T00:00:00.000Z",
+    "updatedAt": "2026-02-10T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 2, "area": 72, "floor": 8, "totalFloors": 17, "metro": "Домодедовская", "condition": "used", "defects": "Требует капремонта", "mileage": 28 }
+  },
+  {
+    "id": 140,
+    "category": "real_estate",
+    "title": "3-к. квартира, 85 м², 15/20 эт., м. Отрадное",
+    "description": "",
+    "price": 16500000,
+    "createdAt": "2026-02-11T00:00:00.000Z",
+    "updatedAt": "2026-02-11T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 3, "area": 85, "floor": 15, "totalFloors": 20, "metro": "Отрадное", "condition": "new" }
+  },
+  {
+    "id": 141,
+    "category": "real_estate",
+    "title": "3-к. квартира, 85 м², 15/20 эт., м. Отрадное",
+    "description": "",
+    "price": 13500000,
+    "createdAt": "2026-02-12T00:00:00.000Z",
+    "updatedAt": "2026-02-12T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 3, "area": 85, "floor": 15, "totalFloors": 20, "metro": "Отрадное", "condition": "used", "mileage": 12 }
+  },
+  {
+    "id": 142,
+    "category": "real_estate",
+    "title": "3-к. квартира, 85 м², 15/20 эт., м. Отрадное",
+    "description": "",
+    "price": 9800000,
+    "createdAt": "2026-02-13T00:00:00.000Z",
+    "updatedAt": "2026-02-13T00:00:00.000Z",
+    "params": { "type": "flat", "rooms": 3, "area": 85, "floor": 15, "totalFloors": 20, "metro": "Отрадное", "condition": "used", "defects": "Без окон", "mileage": 40 }
+  },
+  {
+    "id": 143,
+    "category": "electronics",
+    "title": "iPad Air M2 11\" 256GB",
+    "description": "",
+    "price": 95000,
+    "createdAt": "2026-03-20T00:00:00.000Z",
+    "updatedAt": "2026-03-20T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Apple", "model": "iPad Air M2", "condition": "new" }
+  },
+  {
+    "id": 144,
+    "category": "electronics",
+    "title": "iPad Air M2 11\" 256GB",
+    "description": "",
+    "price": 78000,
+    "createdAt": "2026-03-21T00:00:00.000Z",
+    "updatedAt": "2026-03-21T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Apple", "model": "iPad Air M2", "condition": "used", "mileage": 2000 }
+  },
+  {
+    "id": 145,
+    "category": "electronics",
+    "title": "iPad Air M2 11\" 256GB",
+    "description": "",
+    "price": 52000,
+    "createdAt": "2026-03-22T00:00:00.000Z",
+    "updatedAt": "2026-03-22T00:00:00.000Z",
+    "params": { "type": "tablet", "brand": "Apple", "model": "iPad Air M2", "condition": "used", "defects": "Разбит экран", "mileage": 15000 }
+  },
+  {
+    "id": 146,
+    "category": "electronics",
+    "title": "Apple Watch Series 9 45mm",
+    "description": "",
+    "price": 45000,
+    "createdAt": "2026-03-23T00:00:00.000Z",
+    "updatedAt": "2026-03-23T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Apple", "model": "Watch Series 9", "size": 45, "condition": "new" }
+  },
+  {
+    "id": 147,
+    "category": "electronics",
+    "title": "Apple Watch Series 9 45mm",
+    "description": "",
+    "price": 36000,
+    "createdAt": "2026-03-24T00:00:00.000Z",
+    "updatedAt": "2026-03-24T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Apple", "model": "Watch Series 9", "size": 45, "condition": "used", "mileage": 400 }
+  },
+  {
+    "id": 148,
+    "category": "electronics",
+    "title": "Apple Watch Series 9 45mm",
+    "description": "",
+    "price": 22000,
+    "createdAt": "2026-03-25T00:00:00.000Z",
+    "updatedAt": "2026-03-25T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Apple", "model": "Watch Series 9", "size": 45, "condition": "used", "defects": "Разбито стекло", "mileage": 2500 }
+  },
+  {
+    "id": 149,
+    "category": "electronics",
+    "title": "AirPods Max",
+    "description": "",
+    "price": 65000,
+    "createdAt": "2026-03-26T00:00:00.000Z",
+    "updatedAt": "2026-03-26T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Apple", "model": "AirPods Max", "condition": "new" }
+  },
+  {
+    "id": 150,
+    "category": "electronics",
+    "title": "AirPods Max",
+    "description": "",
+    "price": 52000,
+    "createdAt": "2026-03-27T00:00:00.000Z",
+    "updatedAt": "2026-03-27T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Apple", "model": "AirPods Max", "condition": "used", "mileage": 100 }
+  },
+  {
+    "id": 151,
+    "category": "electronics",
+    "title": "AirPods Max",
+    "description": "",
+    "price": 32000,
+    "createdAt": "2026-03-28T00:00:00.000Z",
+    "updatedAt": "2026-03-28T00:00:00.000Z",
+    "params": { "type": "audio", "brand": "Apple", "model": "AirPods Max", "condition": "used", "defects": "Не заряжается", "mileage": 800 }
+  },
+  {
+    "id": 152,
+    "category": "auto",
+    "title": "Lada Granta 1.6 MT, 2023, 12000 км",
+    "description": "",
+    "price": 1050000,
+    "createdAt": "2026-02-14T00:00:00.000Z",
+    "updatedAt": "2026-02-14T00:00:00.000Z",
+    "params": { "brand": "Lada", "model": "Granta", "year": 2023, "transmission": "manual", "mileage": 12000, "condition": "used" }
+  },
+  {
+    "id": 153,
+    "category": "auto",
+    "title": "Lada Granta 1.6 MT, 2020, 75000 км",
+    "description": "",
+    "price": 650000,
+    "createdAt": "2026-02-15T00:00:00.000Z",
+    "updatedAt": "2026-02-15T00:00:00.000Z",
+    "params": { "brand": "Lada", "model": "Granta", "year": 2020, "transmission": "manual", "mileage": 75000, "condition": "used", "defects": "Сколы на капоте" }
+  },
+  {
+    "id": 154,
+    "category": "auto",
+    "title": "Tesla Model Y Long Range, 2022, 35000 км",
+    "description": "",
+    "price": 4800000,
+    "createdAt": "2026-02-16T00:00:00.000Z",
+    "updatedAt": "2026-02-16T00:00:00.000Z",
+    "params": { "brand": "Tesla", "model": "Model Y", "year": 2022, "transmission": "automatic", "mileage": 35000, "condition": "used" }
+  },
+  {
+    "id": 155,
+    "category": "auto",
+    "title": "Tesla Model Y Long Range, 2020, 95000 км",
+    "description": "",
+    "price": 3100000,
+    "createdAt": "2026-02-17T00:00:00.000Z",
+    "updatedAt": "2026-02-17T00:00:00.000Z",
+    "params": { "brand": "Tesla", "model": "Model Y", "year": 2020, "transmission": "automatic", "mileage": 95000, "condition": "used", "defects": "Замена батареи" }
+  },
+  {
+    "id": 156,
+    "category": "electronics",
+    "title": "Samsung Galaxy Watch 6 44mm",
+    "description": "",
+    "price": 28000,
+    "createdAt": "2026-03-29T00:00:00.000Z",
+    "updatedAt": "2026-03-29T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Samsung", "model": "Galaxy Watch 6", "size": 44, "condition": "new" }
+  },
+  {
+    "id": 157,
+    "category": "electronics",
+    "title": "Samsung Galaxy Watch 6 44mm",
+    "description": "",
+    "price": 22000,
+    "createdAt": "2026-03-30T00:00:00.000Z",
+    "updatedAt": "2026-03-30T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Samsung", "model": "Galaxy Watch 6", "size": 44, "condition": "used", "mileage": 600 }
+  },
+  {
+    "id": 158,
+    "category": "electronics",
+    "title": "Samsung Galaxy Watch 6 44mm",
+    "description": "",
+    "price": 13000,
+    "createdAt": "2026-03-31T00:00:00.000Z",
+    "updatedAt": "2026-03-31T00:00:00.000Z",
+    "params": { "type": "watch", "brand": "Samsung", "model": "Galaxy Watch 6", "size": 44, "condition": "used", "defects": "Трещина на корпусе", "mileage": 3500 }
   }
 ]
