@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/pagination';
 
 export function AdsListPage() {
-  const { filters, page, setPage, limit } = useAdsStore();
+  const { filters, page, setPage, limit, sortColumn, sortDirection } = useAdsStore();
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const queryParams = {
@@ -25,6 +25,8 @@ export function AdsListPage() {
     skip: (page - 1) * limit,
     needsRevision: filters.needsRevision || undefined,
     categories: filters.categories.length > 0 ? filters.categories.join(',') : undefined,
+    sortColumn,
+    sortDirection,
   };
 
   const { data, isLoading, error } = useQuery({
@@ -36,7 +38,7 @@ export function AdsListPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-card">
+      <header>
         <div className="container mx-auto px-4 py-4">
           <AdsListHeader 
             total={data?.total || 0} 
@@ -46,7 +48,7 @@ export function AdsListPage() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-4">
         <div className="flex flex-col gap-6 lg:flex-row">
           <FiltersSidebar />
 

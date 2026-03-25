@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Filter, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Filter, ChevronDown, ChevronUp } from 'lucide-react';
 import { useAdsStore } from '@/lib/store';
 import { CATEGORY_LABELS, ItemCategory } from '@/types';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
@@ -25,25 +24,14 @@ export function FiltersSidebar() {
   const hasActiveFilters = filters.categories.length > 0 || filters.needsRevision;
 
   return (
-    <aside className="w-full lg:w-64 shrink-0">
+    <aside className="w-full lg:w-64 shrink-0 space-y-4">
       <Card>
-        <CardContent className="pt-6">
+        <CardContent>
           <div className="flex items-center justify-between mb-4 min-h-[2rem]">
             <h2 className="font-semibold flex items-center gap-2">
               <Filter className="h-4 w-4" />
               Фильтры
             </h2>
-            {hasActiveFilters && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={resetFilters}
-                className="text-muted-foreground h-6 px-2"
-              >
-                <X className="h-3 w-3 mr-1" />
-                Сбросить
-              </Button>
-            )}
           </div>
 
           <div className="space-y-3">
@@ -99,6 +87,16 @@ export function FiltersSidebar() {
           </div>
         </CardContent>
       </Card>
+
+      {hasActiveFilters && (
+        <button 
+          type="button"
+          onClick={resetFilters}
+          className="w-full bg-white text-muted-foreground hover:text-foreground px-4 py-2 rounded-md border border-input text-sm transition-colors"
+        >
+          Сбросить фильтры
+        </button>
+      )}
     </aside>
   );
 }

@@ -22,7 +22,7 @@ export function ItemParams({ item }: ItemParamsProps) {
         }
 
         return (
-          <div key={field.key} className="flex justify-between py-2">
+          <div key={field.key} className="flex justify-between">
             <span className="text-muted-foreground">{field.label}</span>
             <span className="font-medium">{displayValue}</span>
           </div>
