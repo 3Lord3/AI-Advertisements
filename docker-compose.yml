@@ -1,0 +1,61 @@
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: ai-ads-backend
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./server/data:/app/data
+    environment:
+      - PORT=8080
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/items?limit=1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-ads-frontend
+    ports:
+      - "5180:5173"
+    environment:
+      - VITE_OLLAMA_URL=http://host.docker.internal:11434
+      - VITE_OLLAMA_MODEL=llama3.2:1b
+      - VITE_API_URL=/api
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ai-ads-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+    profiles:
+      - ai  # Start with: docker compose --profile ai up
+
+volumes:
+  ollama-data:
+
+networks:
+  default:
+    name: ai-ads-network

@@ -59,7 +59,7 @@ export function AdsListPage() {
 
             {error && (
               <Card className="border-destructive">
-                <CardContent className="pt-6">
+                <CardContent>
                   <p className="text-destructive">
                     Ошибка загрузки объявлений. Попробуйте позже.
                   </p>
