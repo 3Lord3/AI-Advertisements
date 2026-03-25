@@ -76,7 +76,7 @@ export function AdsListPage() {
                     </CardContent>
                   </Card>
                 ) : (
-                  <AdsGrid items={data?.items || []} />
+                  <AdsGrid items={data?.items || []} viewMode={viewMode} />
                 )}
 
                 {totalPages > 1 && (
