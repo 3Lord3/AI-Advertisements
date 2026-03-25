@@ -8,6 +8,8 @@ import type {
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const OLLAMA_URL = import.meta.env.VITE_OLLAMA_URL || 'http://localhost:11434';
+// Use proxy in development to avoid CORS issues
+const OLLAMA_BASE = import.meta.env.DEV ? '/ollama' : (import.meta.env.VITE_OLLAMA_URL || 'http://localhost:11434');
 const OLLAMA_MODEL = import.meta.env.VITE_OLLAMA_MODEL || 'llama3';
 
 // Ollama configuration
@@ -94,7 +96,7 @@ export async function checkOllamaAvailability(): Promise<boolean> {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-    const response = await fetch(`${OLLAMA_URL}/api/tags`, {
+    const response = await fetch(`${OLLAMA_BASE}/api/tags`, {
       signal: controller.signal,
     });
 
@@ -166,7 +168,7 @@ export async function generateDescription(
     try {
       logger.info(`Отправка запроса к Ollama (generateDescription), попытка ${attempt}/${maxRetries}`);
       
-      const response = await fetchWithTimeout(`${OLLAMA_URL}/api/generate`, {
+      const response = await fetchWithTimeout(`${OLLAMA_BASE}/api/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -302,7 +304,7 @@ async function analyzeAdCondition(
 Ответь ТОЛЬКО одним словом из трёх вариантов: new, used-good, used-fair`;
 
   try {
-    const response = await fetchWithTimeout(`${OLLAMA_URL}/api/generate`, {
+    const response = await fetchWithTimeout(`${OLLAMA_BASE}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -501,7 +503,7 @@ async function getPriceFromAI(
     try {
       logger.info(`Запрос к Ollama (fallback), попытка ${attempt}/${maxRetries}`);
 
-      const response = await fetchWithTimeout(`${OLLAMA_URL}/api/generate`, {
+      const response = await fetchWithTimeout(`${OLLAMA_BASE}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
