@@ -15,7 +15,7 @@ export function AdCard({ item, viewMode = 'grid' }: AdCardProps) {
   if (viewMode === 'list') {
     return (
       <Card
-        className="cursor-pointer transition-shadow hover:shadow-md flex flex-row"
+        className="cursor-pointer transition-shadow hover:shadow-md flex flex-row ps-4"
         onClick={() => navigate(`/ads/${item.id}`)}
       >
         <div className="w-32 h-24 bg-muted rounded-l-md flex items-center justify-center select-none shrink-0">
@@ -52,7 +52,7 @@ export function AdCard({ item, viewMode = 'grid' }: AdCardProps) {
   // Grid view layout
   return (
     <Card
-      className="cursor-pointer transition-shadow hover:shadow-md flex flex-col h-full"
+      className="cursor-pointer transition-shadow hover:shadow-md flex flex-col h-full pt-0 py-0"
       onClick={() => navigate(`/ads/${item.id}`)}
     >
       <div className="aspect-video bg-muted rounded-t-md flex items-center justify-center select-none w-full">

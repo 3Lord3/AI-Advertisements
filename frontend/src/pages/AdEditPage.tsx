@@ -214,7 +214,7 @@ export function AdEditPage() {
           </Card>
 
           <div className="flex justify-end gap-4">
-            <Button type="button" variant="outline" onClick={handleCancel} disabled={updateMutation.isPending}>
+            <Button type="button" variant="outline" className="bg-white border-gray-300 hover:bg-gray-100" onClick={handleCancel} disabled={updateMutation.isPending}>
               <X className="h-4 w-4 mr-2" />
               Отменить
             </Button>

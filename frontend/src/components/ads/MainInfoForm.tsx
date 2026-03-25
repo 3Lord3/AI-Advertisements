@@ -218,7 +218,7 @@ export function MainInfoForm({
         open={!!generatedDescription} 
         onOpenChange={(open) => !open && onCancelGeneratedDescription?.()}
       >
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl bg-white">
           <DialogHeader>
             <DialogTitle>Описание сгенерировано</DialogTitle>
           </DialogHeader>
@@ -242,8 +242,8 @@ export function MainInfoForm({
               </div>
             )}
           </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={onCancelGeneratedDescription}>
+          <DialogFooter className="bg-white">
+            <Button variant="outline" className="bg-white" onClick={onCancelGeneratedDescription}>
               Отмена
             </Button>
             <Button onClick={onApplyGeneratedDescription}>

@@ -1,4 +1,4 @@
-import { Item, getParamsFields, ParamsField } from '@/types';
+import { Item, getParamsFields, getSelectLabel, ParamsField } from '@/types';
 
 interface ItemParamsProps {
   item: Item;
@@ -16,9 +16,9 @@ export function ItemParams({ item }: ItemParamsProps) {
         if (value === undefined || value === '' || value === null) return null;
 
         let displayValue = String(value);
-        if (field.type === 'select' && field.options) {
-          const option = field.options.find((opt) => opt.value === value);
-          displayValue = option?.label || String(value);
+        // Используем getSelectLabel для преобразования технических значений в читаемые
+        if (field.type === 'select') {
+          displayValue = getSelectLabel(item.category, field.key, String(value));
         }
 
         return (
