@@ -32,6 +32,9 @@ export function AdEditPage() {
   const [isGettingPrice, setIsGettingPrice] = useState(false);
   const [ollamaAvailable, setOllamaAvailable] = useState<boolean | null>(null);
   const [priceAnalysis, setPriceAnalysis] = useState<PriceAnalysis | null>(null);
+  // Для сравнения описаний
+  const [generatedDescription, setGeneratedDescription] = useState<string | null>(null);
+  const [previousDescription, setPreviousDescription] = useState<string>('');
 
   // Create a unified onChange handler that handles all fields
   const handleMainInfoChange = (field: string, value: string | number | ItemCategory) => {
@@ -84,6 +87,9 @@ export function AdEditPage() {
       return;
     }
 
+    // Сохраняем текущее описание перед генерацией нового
+    setPreviousDescription(formData.description);
+    
     setIsGeneratingDescription(true);
     try {
       const description = await generateDescription(
@@ -91,7 +97,8 @@ export function AdEditPage() {
         formData.category,
         formData.params
       );
-      setFormData(prev => ({ ...prev, description }));
+      // Вместо того чтобы сразу применить, показываем диалог сравнения
+      setGeneratedDescription(description);
     } catch (error) {
       if (error instanceof OllamaError) {
         alert(error.message);
@@ -101,6 +108,19 @@ export function AdEditPage() {
     } finally {
       setIsGeneratingDescription(false);
     }
+  };
+
+  const handleApplyGeneratedDescription = () => {
+    if (generatedDescription) {
+      setFormData(prev => ({ ...prev, description: generatedDescription }));
+    }
+    setGeneratedDescription(null);
+    setPreviousDescription('');
+  };
+
+  const handleCancelGeneratedDescription = () => {
+    setGeneratedDescription(null);
+    setPreviousDescription('');
   };
 
   const handleGetPrice = async () => {
@@ -167,11 +187,15 @@ export function AdEditPage() {
                 onChange={handleMainInfoChange}
                 isGeneratingDescription={isGeneratingDescription}
                 isGettingPrice={isGettingPrice}
-                onGenerateDescription={ollamaAvailable ? handleGenerateDescription : undefined}
-                onGetPrice={ollamaAvailable ? handleGetPrice : undefined}
+                onGenerateDescription={ollamaAvailable !== false ? handleGenerateDescription : undefined}
+                onGetPrice={ollamaAvailable !== false ? handleGetPrice : undefined}
                 priceAnalysis={priceAnalysis}
                 onApplyPrice={handleApplyPrice}
                 onClosePriceDialog={handleClosePriceDialog}
+                generatedDescription={generatedDescription}
+                previousDescription={previousDescription}
+                onApplyGeneratedDescription={handleApplyGeneratedDescription}
+                onCancelGeneratedDescription={handleCancelGeneratedDescription}
               />
             </CardContent>
           </Card>

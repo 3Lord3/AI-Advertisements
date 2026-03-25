@@ -21,6 +21,11 @@ export interface MainInfoFormProps {
   priceAnalysis?: PriceAnalysis | null;
   onApplyPrice?: (price: number) => void;
   onClosePriceDialog?: () => void;
+  // AI generated description comparison
+  generatedDescription?: string | null;
+  previousDescription?: string;
+  onApplyGeneratedDescription?: () => void;
+  onCancelGeneratedDescription?: () => void;
 }
 
 export function MainInfoForm({
@@ -36,6 +41,10 @@ export function MainInfoForm({
   priceAnalysis,
   onApplyPrice,
   onClosePriceDialog,
+  generatedDescription,
+  previousDescription,
+  onApplyGeneratedDescription,
+  onCancelGeneratedDescription,
 }: MainInfoFormProps) {
   // Кнопки активны только когда заполнены title и category
   const isAiEnabled = !!(title && category && title.trim().length > 0);
@@ -200,6 +209,46 @@ export function MainInfoForm({
           )}
           <DialogFooter>
             <Button variant="outline" onClick={onClosePriceDialog}>Отмена</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      {/* Dialog с сгенерированным описанием */}
+      <Dialog 
+        open={!!generatedDescription} 
+        onOpenChange={(open) => !open && onCancelGeneratedDescription?.()}
+      >
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>Описание сгенерировано</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 py-2">
+            {previousDescription && previousDescription.trim().length > 0 && (
+              <div>
+                <p className="text-sm font-medium text-muted-foreground mb-2">Текущее описание:</p>
+                <div className="p-3 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-lg text-sm">
+                  {previousDescription}
+                </div>
+              </div>
+            )}
+            {generatedDescription && (
+              <div>
+                <p className="text-sm font-medium text-muted-foreground mb-2">
+                  {previousDescription && previousDescription.trim().length > 0 ? 'Новое описание:' : 'Сгенерированное описание:'}
+                </p>
+                <div className="p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg text-sm">
+                  {generatedDescription}
+                </div>
+              </div>
+            )}
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={onCancelGeneratedDescription}>
+              Отмена
+            </Button>
+            <Button onClick={onApplyGeneratedDescription}>
+              Подтвердить
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
