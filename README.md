@@ -13,7 +13,7 @@
 git clone https://github.com/3Lord3/AI-Advertisements
 cd ai-advertisements
 
-# Запустить все сервисы (включая Ollama)
+# Запустить все сервисы
 docker compose up -d
 ```
 
