@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { getItems } from '@/lib/api';
-import { useAdsStore } from '@/lib/store';
+import { useAdsStore } from '@/store';
 import { AdsListHeader } from '@/components/ads/AdsListHeader';
 import { FiltersSidebar } from '@/components/ads/FiltersSidebar';
 import { AdsGrid } from '@/components/ads/AdsGrid';

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Search, ArrowUpDown, LayoutGrid, List } from 'lucide-react';
-import { useAdsStore } from '@/lib/store';
+import { useAdsStore } from '@/store';
 import { useDebounce } from '@/hooks/useDebounce';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';

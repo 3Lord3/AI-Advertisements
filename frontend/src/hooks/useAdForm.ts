@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useSuspenseQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getItem, updateItem } from '@/lib/api';
-import { useAdsStore } from '@/lib/store';
+import { useAdsStore } from '@/store';
 import { useDebounce } from './useDebounce';
 import { ItemCategory, AutoItemParams, RealEstateItemParams, ElectronicsItemParams, Item } from '@/types';
 

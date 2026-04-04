@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Filter, ChevronDown, ChevronUp } from 'lucide-react';
-import { useAdsStore } from '@/lib/store';
+import { useAdsStore } from '@/store';
 import { CATEGORY_LABELS, ItemCategory } from '@/types';
 import { Card, CardContent } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
