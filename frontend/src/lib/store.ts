@@ -1,30 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { AdsFilters, SortColumn, SortDirection, ItemUpdateInput } from '@/types';
-
-interface AdsState {
-  // Filters
-  filters: AdsFilters;
-  setFilters: (filters: Partial<AdsFilters>) => void;
-  resetFilters: () => void;
-
-  // Sorting
-  sortColumn: SortColumn;
-  sortDirection: SortDirection;
-  setSort: (column: SortColumn, direction: SortDirection) => void;
-
-  // Pagination
-  page: number;
-  limit: number;
-  setPage: (page: number) => void;
-  setLimit: (limit: number) => void;
-
-  // Draft storage for edit form
-  drafts: Record<number, ItemUpdateInput>;
-  saveDraft: (id: number, data: ItemUpdateInput) => void;
-  getDraft: (id: number) => ItemUpdateInput | undefined;
-  clearDraft: (id: number) => void;
-}
+import type { AdsState, AdsFilters } from '@/types';
 
 const defaultFilters: AdsFilters = {
   search: '',

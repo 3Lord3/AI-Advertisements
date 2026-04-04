@@ -144,6 +144,31 @@ export interface AdsFilters {
 export type SortColumn = 'title' | 'createdAt';
 export type SortDirection = 'asc' | 'desc';
 
+// Ads store state type
+export interface AdsState {
+  // Filters
+  filters: AdsFilters;
+  setFilters: (filters: Partial<AdsFilters>) => void;
+  resetFilters: () => void;
+
+  // Sorting
+  sortColumn: SortColumn;
+  sortDirection: SortDirection;
+  setSort: (column: SortColumn, direction: SortDirection) => void;
+
+  // Pagination
+  page: number;
+  limit: number;
+  setPage: (page: number) => void;
+  setLimit: (limit: number) => void;
+
+  // Draft storage for edit form
+  drafts: Record<number, ItemUpdateInput>;
+  saveDraft: (id: number, data: ItemUpdateInput) => void;
+  getDraft: (id: number) => ItemUpdateInput | undefined;
+  clearDraft: (id: number) => void;
+}
+
 // Category labels (Russian)
 export const CATEGORY_LABELS: Record<ItemCategory, string> = {
   auto: 'Автомобили',
