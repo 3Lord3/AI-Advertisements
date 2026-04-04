@@ -4,7 +4,11 @@ import type {
   ItemsGetResponse,
   ItemGetResponse,
   ItemWithRevision,
+  PriceAnalysis,
 } from '@/types';
+
+// Re-export for backward compatibility
+export type { PriceAnalysis as PriceAnalysisResult } from '@/types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 // Use proxy in development to avoid CORS issues
@@ -269,17 +273,7 @@ export async function generateDescription(
   throw lastError;
 }
 
-// Price analysis result interface
-export interface PriceAnalysis {
-  suggestedPrice: number;
-  newPrice: number;
-  usedGoodPrice: number;
-  usedFairPrice: number;
-  foundCount: number;
-  avgPrice: number;
-  minPrice: number;
-  maxPrice: number;
-}
+
 
 // Analyze ad condition using AI
 async function analyzeAdCondition(

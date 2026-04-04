@@ -45,6 +45,53 @@ export type ItemWithRevision = Item & {
   needsRevision: boolean;
 };
 
+// Price analysis result interface
+export interface PriceAnalysis {
+  suggestedPrice: number;
+  newPrice: number;
+  usedGoodPrice: number;
+  usedFairPrice: number;
+  foundCount: number;
+  avgPrice: number;
+  minPrice: number;
+  maxPrice: number;
+}
+
+// MainInfoForm props types
+export interface MainInfoFormProps {
+  formData: {
+    category: ItemCategory;
+    title: string;
+    price: number;
+    description: string;
+  };
+  onChange: (field: string, value: string | number | ItemCategory) => void;
+  aiState?: {
+    isGeneratingDescription?: boolean;
+    isGettingPrice?: boolean;
+    onGenerateDescription?: () => void;
+    onGetPrice?: () => void;
+  };
+  priceDialog?: {
+    priceAnalysis?: PriceAnalysis | null;
+    onApplyPrice?: (price: number) => void;
+    onClosePriceDialog?: () => void;
+  };
+  descriptionDialog?: {
+    generatedDescription?: string | null;
+    previousDescription?: string;
+    onApplyGeneratedDescription?: () => void;
+    onCancelGeneratedDescription?: () => void;
+  };
+}
+
+// AdsPagination props types
+export interface AdsPaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+
 // List item (from /items endpoint) - includes id for navigation
 export type ListItem = {
   id: number;

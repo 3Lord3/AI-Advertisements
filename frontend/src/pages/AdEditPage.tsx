@@ -3,22 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { Save, X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
-import { ErrorMessage } from '@/components/ui/ErrorMessage';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { MainInfoForm } from '@/components/ads/MainInfoForm';
 import { ParamsForm } from '@/components/ads/ParamsForm';
 import { useAdForm } from '@/hooks/useAdForm';
-import { generateDescription, getMarketPrice, checkOllamaAvailability, OllamaError, PriceAnalysis } from '@/lib/api';
-import { ItemCategory } from '@/types';
+import { generateDescription, getMarketPrice, checkOllamaAvailability, OllamaError } from '@/lib/api';
+import { ItemCategory, PriceAnalysis } from '@/types';
 
 export function AdEditPage() {
   const navigate = useNavigate();
   const { 
     formData, 
     setFormData, 
-    isLoading, 
-    error, 
     itemId,
     item,
     updateMutation, 
@@ -26,6 +22,11 @@ export function AdEditPage() {
     handleCategoryChange,
     handleParamChange 
   } = useAdForm();
+
+  // Throw error if item not found
+  if (!item) {
+    throw new Error('Объявление не найдено');
+  }
 
   // AI state
   const [isGeneratingDescription, setIsGeneratingDescription] = useState(false);
@@ -165,9 +166,6 @@ export function AdEditPage() {
   const handleBack = () => navigate(`/ads/${itemId}`);
   const handleCancel = () => navigate(`/ads/${itemId}`);
 
-  if (isLoading) return <LoadingSpinner />;
-  if (error) return <ErrorMessage message="Объявление не найдено" />;
-
   return (
     <div className="min-h-screen bg-background">
       <PageHeader title="Редактирование объявления" onBackClick={handleBack} />
@@ -180,22 +178,30 @@ export function AdEditPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <MainInfoForm
-                category={formData.category}
-                title={formData.title}
-                price={formData.price}
-                description={formData.description}
+                formData={{
+                  category: formData.category,
+                  title: formData.title,
+                  price: formData.price,
+                  description: formData.description,
+                }}
                 onChange={handleMainInfoChange}
-                isGeneratingDescription={isGeneratingDescription}
-                isGettingPrice={isGettingPrice}
-                onGenerateDescription={ollamaAvailable !== false ? handleGenerateDescription : undefined}
-                onGetPrice={ollamaAvailable !== false ? handleGetPrice : undefined}
-                priceAnalysis={priceAnalysis}
-                onApplyPrice={handleApplyPrice}
-                onClosePriceDialog={handleClosePriceDialog}
-                generatedDescription={generatedDescription}
-                previousDescription={previousDescription}
-                onApplyGeneratedDescription={handleApplyGeneratedDescription}
-                onCancelGeneratedDescription={handleCancelGeneratedDescription}
+                aiState={{
+                  isGeneratingDescription,
+                  isGettingPrice,
+                  onGenerateDescription: ollamaAvailable !== false ? handleGenerateDescription : undefined,
+                  onGetPrice: ollamaAvailable !== false ? handleGetPrice : undefined,
+                }}
+                priceDialog={{
+                  priceAnalysis,
+                  onApplyPrice: handleApplyPrice,
+                  onClosePriceDialog: handleClosePriceDialog,
+                }}
+                descriptionDialog={{
+                  generatedDescription,
+                  previousDescription,
+                  onApplyGeneratedDescription: handleApplyGeneratedDescription,
+                  onCancelGeneratedDescription: handleCancelGeneratedDescription,
+                }}
               />
             </CardContent>
           </Card>

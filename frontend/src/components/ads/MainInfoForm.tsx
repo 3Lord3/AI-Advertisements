@@ -4,48 +4,24 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CATEGORY_LABELS, CATEGORY_OPTIONS, ItemCategory } from '@/types';
+import type { MainInfoFormProps } from '@/types';
 import { Sparkles, TrendingUp, Loader2 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
-import { PriceAnalysis } from '@/lib/api';
 
-export interface MainInfoFormProps {
-  category: ItemCategory;
-  title: string;
-  price: number;
-  description: string;
-  onChange: (field: string, value: string | number | ItemCategory) => void;
-  isGeneratingDescription?: boolean;
-  isGettingPrice?: boolean;
-  onGenerateDescription?: () => void;
-  onGetPrice?: () => void;
-  priceAnalysis?: PriceAnalysis | null;
-  onApplyPrice?: (price: number) => void;
-  onClosePriceDialog?: () => void;
-  // AI generated description comparison
-  generatedDescription?: string | null;
-  previousDescription?: string;
-  onApplyGeneratedDescription?: () => void;
-  onCancelGeneratedDescription?: () => void;
-}
+export type { MainInfoFormProps };
 
 export function MainInfoForm({
-  category,
-  title,
-  price,
-  description,
+  formData,
   onChange,
-  isGeneratingDescription = false,
-  isGettingPrice = false,
-  onGenerateDescription,
-  onGetPrice,
-  priceAnalysis,
-  onApplyPrice,
-  onClosePriceDialog,
-  generatedDescription,
-  previousDescription,
-  onApplyGeneratedDescription,
-  onCancelGeneratedDescription,
+  aiState = {},
+  priceDialog = {},
+  descriptionDialog = {},
 }: MainInfoFormProps) {
+  const { category, title, price, description } = formData;
+  const { isGeneratingDescription = false, isGettingPrice = false, onGenerateDescription, onGetPrice } = aiState;
+  const { priceAnalysis, onApplyPrice, onClosePriceDialog } = priceDialog;
+  const { generatedDescription, previousDescription, onApplyGeneratedDescription, onCancelGeneratedDescription } = descriptionDialog;
+  
   // Кнопки активны только когда заполнены title и category
   const isAiEnabled = !!(title && category && title.trim().length > 0);
   

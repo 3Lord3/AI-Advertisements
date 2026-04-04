@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect, useRef } from 'react';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useSuspenseQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getItem, updateItem } from '@/lib/api';
 import { useAdsStore } from '@/lib/store';
@@ -46,10 +46,9 @@ export function useAdForm(): UseAdFormReturn {
   const itemId = Number(id);
   const { saveDraft, clearDraft } = useAdsStore();
 
-  const { data, isLoading, error } = useQuery({
+  const { data } = useSuspenseQuery({
     queryKey: ['item', itemId],
     queryFn: () => getItem(itemId),
-    enabled: !isNaN(itemId) && itemId > 0,
   });
 
   const item = data?.item as Item | undefined;
@@ -120,8 +119,8 @@ export function useAdForm(): UseAdFormReturn {
   return {
     formData,
     setFormData,
-    isLoading,
-    error: !!error,
+    isLoading: false,
+    error: false,
     itemId,
     item,
     updateMutation: { isPending: updateMutation.isPending, isError: updateMutation.isError },
