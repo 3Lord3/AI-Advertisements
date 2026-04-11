@@ -1,7 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import { LoadingSpinner } from './components/ui/LoadingSpinner';
+import { Spinner } from './components/ui/spinner';
 import { ThemeToggle } from './components/ui/ThemeToggle';
 
 // Lazy load pages for better performance
@@ -29,7 +29,7 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <LoadingSpinner />
+    <Spinner className="h-8 w-8" />
     </div>
   );
 }

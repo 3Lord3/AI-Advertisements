@@ -159,7 +159,7 @@ export function MainInfoForm({
               <div className="space-y-2">
                 <button
                   onClick={() => onApplyPrice?.(priceAnalysis.newPrice)}
-                  className="w-full p-3 text-left border rounded-lg hover:bg-purple-50 hover:border-purple-500 transition-colors"
+                  className="w-full p-3 text-left border rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 transition-colors"
                 >
                   <div className="font-medium">Новый товар</div>
                   <div className="text-lg font-bold text-purple-600">{formatPrice(priceAnalysis.newPrice)}</div>
@@ -167,7 +167,7 @@ export function MainInfoForm({
                 
                 <button
                   onClick={() => onApplyPrice?.(priceAnalysis.usedGoodPrice)}
-                  className="w-full p-3 text-left border rounded-lg hover:bg-purple-50 hover:border-purple-500 transition-colors"
+                  className="w-full p-3 text-left border rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 transition-colors"
                 >
                   <div className="font-medium">Б/у в хорошем состоянии</div>
                   <div className="text-lg font-bold text-purple-600">{formatPrice(priceAnalysis.usedGoodPrice)}</div>
@@ -175,7 +175,7 @@ export function MainInfoForm({
                 
                 <button
                   onClick={() => onApplyPrice?.(priceAnalysis.usedFairPrice)}
-                  className="w-full p-3 text-left border rounded-lg hover:bg-purple-50 hover:border-purple-500 transition-colors"
+                  className="w-full p-3 text-left border rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:border-purple-500 transition-colors"
                 >
                   <div className="font-medium">Б/у с дефектами</div>
                   <div className="text-lg font-bold text-purple-600">{formatPrice(priceAnalysis.usedFairPrice)}</div>
@@ -194,7 +194,7 @@ export function MainInfoForm({
         open={!!generatedDescription} 
         onOpenChange={(open) => !open && onCancelGeneratedDescription?.()}
       >
-        <DialogContent className="max-w-2xl bg-white">
+        <DialogContent className="max-w-2xl">
           <DialogHeader>
             <DialogTitle>Описание сгенерировано</DialogTitle>
           </DialogHeader>
@@ -218,8 +218,8 @@ export function MainInfoForm({
               </div>
             )}
           </div>
-          <DialogFooter className="bg-white">
-            <Button variant="outline" className="bg-white" onClick={onCancelGeneratedDescription}>
+          <DialogFooter>
+            <Button variant="outline" onClick={onCancelGeneratedDescription}>
               Отмена
             </Button>
             <Button onClick={onApplyGeneratedDescription}>

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { getItem } from '@/lib/api';
-import { PageHeader } from '@/components/ui/PageHeader';
+import { PageHeader } from '@/components/PageHeader';
 import { ItemCard } from '@/components/ads/ItemCard';
 
 export function AdDetailPage() {
@@ -16,7 +16,7 @@ export function AdDetailPage() {
   const item = data?.item;
 
   if (!item) {
-    throw new Error('Объявление не найдено');
+    throw new Error('Ad not found');
   }
 
   return (

@@ -1,239 +1,115 @@
-import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Save, X, Loader2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { PageHeader } from '@/components/ui/PageHeader';
+import { Form } from '@/components/ui/form';
+import { PageHeader } from '@/components/PageHeader';
 import { MainInfoForm } from '@/components/ads/MainInfoForm';
 import { ParamsForm } from '@/components/ads/ParamsForm';
+import { ActionButtons } from '@/components/ads/ActionButtons';
 import { useAdForm } from '@/hooks/useAdForm';
-import { generateDescription, getMarketPrice, checkOllamaAvailability, OllamaError } from '@/lib/api';
-import { ItemCategory, PriceAnalysis } from '@/types';
+import { useAiFeatures } from '@/hooks/useAiFeatures';
+import type { AdFormData } from '@/lib/schemas';
 
 export function AdEditPage() {
   const navigate = useNavigate();
   const { 
-    formData, 
-    setFormData, 
+    form,
     itemId,
     item,
-    updateMutation, 
-    handleSubmit, 
+    updateMutation,
     handleCategoryChange,
-    handleParamChange 
+    handleParamChange,
   } = useAdForm();
+
+  const { watch, setValue, handleSubmit } = form;
 
   // Throw error if item not found
   if (!item) {
-    throw new Error('Объявление не найдено');
+    throw new Error('Ad not found');
   }
 
-  // AI state
-  const [isGeneratingDescription, setIsGeneratingDescription] = useState(false);
-  const [isGettingPrice, setIsGettingPrice] = useState(false);
-  const [ollamaAvailable, setOllamaAvailable] = useState<boolean | null>(null);
-  const [priceAnalysis, setPriceAnalysis] = useState<PriceAnalysis | null>(null);
-  // Для сравнения описаний
-  const [generatedDescription, setGeneratedDescription] = useState<string | null>(null);
-  const [previousDescription, setPreviousDescription] = useState<string>('');
+  const formValues = watch();
 
-  // Create a unified onChange handler that handles all fields
-  const handleMainInfoChange = (field: string, value: string | number | ItemCategory) => {
-    if (field === 'category' && typeof value === 'string') {
-      handleCategoryChange(value as ItemCategory);
-    } else {
-      setFormData(prev => ({ ...prev, [field]: value }));
-    }
-  };
-
-  // Track if form has been modified from initial state
-  const hasUnsavedChanges = useMemo(() => {
-    if (!item) return false;
-    // Normalize params for comparison (convert all values to strings)
-    const normalizeParams = (params: Record<string, unknown>) => 
-      JSON.stringify(Object.entries(params || {}).sort(([a], [b]) => a.localeCompare(b)));
-    return formData.title !== item.title ||
-           formData.description !== (item.description || '')||
-           formData.price !== item.price ||
-           formData.category !== item.category ||
-           normalizeParams(formData.params) !== normalizeParams(item.params);
-  }, [formData, item]);
-
-  // Warn about unsaved changes before leaving
-  useEffect(() => {
-    if (!hasUnsavedChanges) return;
-    
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      e.preventDefault();
-      e.returnValue = '';
-    };
-    
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [hasUnsavedChanges]);
-
-  // Check Ollama availability on mount
-  useEffect(() => {
-    const checkOllama = async () => {
-      const available = await checkOllamaAvailability();
-      setOllamaAvailable(available);
-    };
-    checkOllama();
-  }, []);
-
-  // AI handlers
-  const handleGenerateDescription = async () => {
-    if (!formData.title || !formData.category) {
-      alert('Пожалуйста, заполните название и категорию');
-      return;
-    }
-
-    // Сохраняем текущее описание перед генерацией нового
-    setPreviousDescription(formData.description);
-    
-    setIsGeneratingDescription(true);
-    try {
-      const description = await generateDescription(
-        formData.title,
-        formData.category,
-        formData.params
-      );
-      // Вместо того чтобы сразу применить, показываем диалог сравнения
-      setGeneratedDescription(description);
-    } catch (error) {
-      if (error instanceof OllamaError) {
-        alert(error.message);
-      } else {
-        alert('Не удалось сгенерировать описание. Попробуйте позже.');
-      }
-    } finally {
-      setIsGeneratingDescription(false);
-    }
-  };
-
-  const handleApplyGeneratedDescription = () => {
-    if (generatedDescription) {
-      setFormData(prev => ({ ...prev, description: generatedDescription }));
-    }
-    setGeneratedDescription(null);
-    setPreviousDescription('');
-  };
-
-  const handleCancelGeneratedDescription = () => {
-    setGeneratedDescription(null);
-    setPreviousDescription('');
-  };
-
-  const handleGetPrice = async () => {
-    if (!formData.title || !formData.category) {
-      alert('Пожалуйста, заполните название и категорию');
-      return;
-    }
-
-    setIsGettingPrice(true);
-    setPriceAnalysis(null);
-    try {
-      const result = await getMarketPrice(
-        formData.title,
-        formData.category,
-        formData.params
-      );
-      if (result.suggestedPrice > 0) {
-        setPriceAnalysis(result);
-      } else {
-        alert('Не удалось определить рыночную цену. Попробуйте изменить описание товара.');
-      }
-    } catch (error) {
-      if (error instanceof OllamaError) {
-        alert(error.message);
-      } else {
-        alert('Не удалось определить цену. Попробуйте позже.');
-      }
-    } finally {
-      setIsGettingPrice(false);
-    }
-  };
-
-  const handleApplyPrice = (price: number) => {
-    setFormData(prev => ({ ...prev, price }));
-    setPriceAnalysis(null);
-  };
-
-  const handleClosePriceDialog = () => {
-    setPriceAnalysis(null);
-  };
+  const aiFeatures = useAiFeatures<AdFormData>({
+    formValues,
+    setValue,
+    item,
+  });
 
   const handleBack = () => navigate(`/ads/${itemId}`);
-  const handleCancel = () => navigate(`/ads/${itemId}`);
+
+  const onSubmit = () => {
+    updateMutation.mutate();
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <PageHeader title="Редактирование объявления" onBackClick={handleBack} />
 
       <main className="container mx-auto px-4 py-6">
-        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Основная информация</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <MainInfoForm
-                formData={{
-                  category: formData.category,
-                  title: formData.title,
-                  price: formData.price,
-                  description: formData.description,
-                }}
-                onChange={handleMainInfoChange}
-                aiState={{
-                  isGeneratingDescription,
-                  isGettingPrice,
-                  onGenerateDescription: ollamaAvailable !== false ? handleGenerateDescription : undefined,
-                  onGetPrice: ollamaAvailable !== false ? handleGetPrice : undefined,
-                }}
-                priceDialog={{
-                  priceAnalysis,
-                  onApplyPrice: handleApplyPrice,
-                  onClosePriceDialog: handleClosePriceDialog,
-                }}
-                descriptionDialog={{
-                  generatedDescription,
-                  previousDescription,
-                  onApplyGeneratedDescription: handleApplyGeneratedDescription,
-                  onCancelGeneratedDescription: handleCancelGeneratedDescription,
-                }}
-              />
-            </CardContent>
-          </Card>
+        <Form {...form}>
+          <form onSubmit={handleSubmit(onSubmit)} className="max-w-3xl mx-auto space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Основная информация</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <MainInfoForm
+                  formData={{
+                    category: formValues.category,
+                    title: formValues.title,
+                    price: formValues.price,
+                    description: formValues.description,
+                  }}
+                  onChange={(field, value) => {
+                    if (field === 'category' && typeof value === 'string') {
+                      handleCategoryChange(value as 'auto' | 'real_estate' | 'electronics');
+                    } else if (field === 'price') {
+                      setValue('price', Number(value));
+                    } else {
+                      setValue(field as 'title' | 'description', value as string);
+                    }
+                  }}
+                  aiState={{
+                    isGeneratingDescription: aiFeatures.isGeneratingDescription,
+                    isGettingPrice: aiFeatures.isGettingPrice,
+                    onGenerateDescription: aiFeatures.ollamaAvailable !== false ? aiFeatures.handleGenerateDescription : undefined,
+                    onGetPrice: aiFeatures.ollamaAvailable !== false ? aiFeatures.handleGetPrice : undefined,
+                  }}
+                  priceDialog={{
+                    priceAnalysis: aiFeatures.priceAnalysis,
+                    onApplyPrice: aiFeatures.handleApplyPrice,
+                    onClosePriceDialog: aiFeatures.handleClosePriceDialog,
+                  }}
+                  descriptionDialog={{
+                    generatedDescription: aiFeatures.generatedDescription,
+                    previousDescription: aiFeatures.previousDescription,
+                    onApplyGeneratedDescription: aiFeatures.handleApplyGeneratedDescription,
+                    onCancelGeneratedDescription: aiFeatures.handleCancelGeneratedDescription,
+                  }}
+                />
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Характеристики</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ParamsForm
-                category={formData.category}
-                params={formData.params}
-                onChange={handleParamChange}
-              />
-            </CardContent>
-          </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Параметры</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ParamsForm
+                  category={formValues.category}
+                  params={formValues.params}
+                  onChange={handleParamChange}
+                />
+              </CardContent>
+            </Card>
 
-          <div className="flex justify-end gap-4">
-            <Button type="button" variant="outline" className="bg-white border-gray-300 hover:bg-gray-100" onClick={handleCancel} disabled={updateMutation.isPending}>
-              <X className="h-4 w-4 mr-2" />
-              Отменить
-            </Button>
-            <Button type="submit" disabled={updateMutation.isPending}>
-              {updateMutation.isPending ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Save className="h-4 w-4 mr-2" />}
-              Сохранить
-            </Button>
-          </div>
+            <ActionButtons />
 
-          {updateMutation.isError && (
-            <p className="text-destructive text-center">Ошибка сохранения. Попробуйте позже.</p>
-          )}
-        </form>
+            {updateMutation.isError && (
+              <p className="text-destructive text-center">Не удалось сохранить. Попробуйте позже.</p>
+            )}
+          </form>
+        </Form>
       </main>
     </div>
   );
